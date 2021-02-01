@@ -1,0 +1,33 @@
+#!/bin/fish
+
+alias vim=nvim
+alias univpn='sudo openconnect -u c7031199 --passwd-on-stdin vpn.uibk.ac.at < $HOME/.pass/uni.txt'
+
+# git
+alias gcl='git clone'
+alias gf='git fetch'
+alias gp='git push'
+alias gco='git checkout'
+alias gl='git pull'
+alias gc='git commit'
+alias gst='git status'
+alias ga='git add'
+alias gd='git diff'
+
+# niceties
+alias hl='highlight -O ansi'
+alias r='R -q --no-save'
+alias gdb='gdb-multiarch -q'
+alias pi='python -m pip install -U'
+alias ssh='ssh -A'
+alias scrum='Rscript $HOME/.local/bin/scrum.R | xsel -b'
+
+# emulation
+alias qdb='gdb-multiarch -q --tui -ex "target remote localhost:1234" -ex "layout asm" -ex "layout split" -ex "layout regs"'
+alias qarm='qemu-arm -L /usr/arm-linux-gnueabihf'
+
+# latex
+alias lc='latexmk --pvc'
+
+# directories
+alias prosem="cd $HOME/Projects/seclab-tex/classes/Rechnerarchitektur/proseminar/tex/"

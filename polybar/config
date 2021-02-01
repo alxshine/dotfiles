@@ -1,0 +1,61 @@
+[bar/default]
+font-0 = "Ubuntu Mono:pixelsize=13,0"
+monitor = ${env:MONITOR:DP-0}
+
+background = #262626
+foreground = #dab997
+
+separator = " | "
+padding = 2
+
+height = 24
+
+modules-left = i3
+modules-center = xwindow
+modules-right = filesystem date
+
+[module/xwindow]
+type = internal/xwindow
+label = %title:0:80:...%
+
+[module/i3]
+type = internal/i3
+format = <label-state> <label-mode>
+index-sort = true
+wrapping-scroll = true
+pin-workspaces = true
+
+label-focused = %index%
+label-focused-foreground = #f59549
+label-focused-background = #3f3f3f
+label-focused-underline = #f59549
+label-focused-padding = 2
+
+label-separator = |
+label-separator-padding = 2
+label-separator-foreground = #dab997
+
+[module/filesystem]
+type = internal/fs
+interval = 25
+
+mount-0 = /
+
+label-mounted = %mountpoint% %{F-}: %percentage_used%%
+label-unmounted = %mountpoint% not mounted
+;label-unmounted-foreground = ${colors.foreground-alt}
+
+[module/date]
+type = internal/date
+interval = 5
+
+date = " %Y-%m-%d"
+
+time = "%H:%M"
+time-alt = %H:%M:%S
+
+format-prefix = 
+;format-prefix-foreground = ${colors.foreground-alt}
+format-underline = #0a6cf5
+
+label = %date% %time%

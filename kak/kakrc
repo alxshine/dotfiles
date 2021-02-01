@@ -1,0 +1,60 @@
+add-highlighter global/ number-lines
+add-highlighter global/ show-matching
+# add-highlighter global/ show-whitespaces
+add-highlighter global/ wrap
+
+colorscheme gruvbox
+
+
+#### Plugins #####
+evaluate-commands "%sh{[ -d $kak_config/plugins ] || git clone https://github.com/andreyorst/plug.kak.git $kak_config/plugins/plug.kak}"
+source "%val{config}/plugins/plug.kak/rc/plug.kak"
+plug "andreyorst/smarttab.kak" defer smarttab %{
+    set-option global softtabstop 4
+} config %{
+    hook global WinSetOption filetype=(python|c|cpp|rust|markdown|kak|lisp|sh) expandtab
+    # hook global WinSetOption expandtab
+}
+set-option global tabstop 4
+
+# add C highlighting to ino files
+hook global BufCreate .*\.ino %{
+    set-option buffer filetype c
+}
+
+plug "andreyorst/fzf.kak"
+map global normal <c-p> ': fzf-mode<ret>'
+
+# plug "andreyorst/powerline.kak" defer powerline %{
+#     set-option global powerline_format 'powerline-format git bufname filetype mode_info line_column position'
+#     set-option global powerline_separator 'none'
+#     powerline-toggle line_column off
+#     powerline-theme gruvbox
+# } config %{
+#     powerline-start
+# }
+# hook global WinCreate [^*]* %{
+#         editorconfig-load
+# }
+
+# map global insert <tab> '<a-;><gt>'
+# map global insert <s-tab> '<a-;><lt>'
+
+def ide %{
+    rename-client main
+    set global jumpclient main
+
+    new rename-client tools
+    set global toolsclient tools
+
+    new rename-client docs
+    set global docsclient docs
+}
+
+map global user b ':terminal kak -c %val{session}<ret>' -docstring 'split buffer into new terminal'
+map global user t ':terminal bash<ret>' -docstring 'open new terminal at current location'
+map global user c ':comment-line<ret>' -docstring 'comment marked lines'
+map global user e ':make-next-error<ret>' -docstring 'goto next make error'
+
+# make bind
+map global normal <F7> :make<ret> 

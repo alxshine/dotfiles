@@ -1,0 +1,33 @@
+#!/bin/bash
+
+# search with preview of all matches using rp and fzf
+rgs() {
+  searchterm=$1
+
+  result=`rg $searchterm --files-with-matches | fzf --preview "(highlight -O ansi 2>/dev/null {} || cat {}) | rg $searchterm --context 10 --pretty --colors 'match:bg:yellow'"`
+
+  if ! [ -z $result ]; then
+    vim $result +/$searchterm
+  fi
+}
+
+# specialized preview for todos
+td() {
+result=`rg --vimgrep -i TODO | fzf --preview "echo {} | awk -F ':' -f ~/.awk/vimgrep_preview.awk"`
+# result=`rg --vimgrep -i TODO | fzf --preview "echo {}"`
+
+if ! [ -z $result ]; then
+  IFS=':' read -ra PARTS <<< $result
+  vim ${PARTS[0]} +${PARTS[1]}
+fi
+}
+
+# fshow - git commit browser
+fshow() {
+  git log --graph --color=always \
+      --format="%C(auto)%h%d %s %C(black)%C(bold)%cr" "$@" |
+  fzf --ansi --no-sort --reverse --tiebreak=index --toggle-sort=\` \
+      --bind "ctrl-m:execute:
+                echo '{}' | grep -o '[a-f0-9]\{7\}' | head -1 |
+                xargs -I % sh -c 'git show --color=always % | less -R'"
+}

@@ -1,0 +1,48 @@
+# git stuff
+alias gf='git fetch'
+alias gcl='git clone'
+alias gco='git checkout'
+alias gd='git diff'
+alias ga='git add'
+alias gst='git status'
+alias gc='git commit'
+alias gp='git push'
+alias gl='git pull'
+
+#ls stuff
+alias ll='ls -lF'
+alias la='ls -laFA'
+alias l='ls -CF'
+alias dir='ls -laH'
+
+#python stuff
+alias pip='python -m pip'
+alias pi='python -m pip install --user'
+alias ipy='ipython3'
+
+#misc stuff
+alias here="nautilus . &"
+alias dup='alacritty --working-directory "`pwd`"&'
+
+#programming stuff
+alias hl='highlight -O ansi'
+alias ssh='ssh -A'
+alias symsearch='nm -o --defined-only --demangle `find -name "**.so" -o -name "**.a" -o -name "**.o"` | fzf'
+alias gdb='gdb-multiarch -q'
+alias gdd='gdb-multiarch -q -x ~/.config/gdb/dashboard'
+alias gef='gdb-multiarch -q -x ~/.config/gdb/gef.py'
+alias r='R -q --no-save'
+alias apktool='java -jar ~/Tools/apktool/apktool_2.4.1.jar'
+alias dcu="docker-compose up"
+
+#clipboard
+alias xc="xsel -b"
+alias xp="xsel -bp"
+
+#latex stuff
+alias lc="latexmk --pvc"
+
+# vpn stuff
+alias univpn="sudo openconnect vpn.uibk.ac.at -u c7031199 --passwd-on-stdin < ~/.pass/uibk.txt"
+
+alias vim=nvim

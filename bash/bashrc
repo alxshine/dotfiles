@@ -1,0 +1,47 @@
+# Alias definitions.
+# You may want to put all your additions into a separate file like
+# ~/.bash_aliases, instead of adding them here directly.
+# See /usr/share/doc/bash-doc/examples in the bash-doc package.
+
+if [ -f $XDG_HOME/bash/bash_aliases ]; then
+    . $XDG_HOME/bash/bash_aliases
+fi
+
+if [ -f $XDG_HOME/bash/bash_functions ]; then
+  . $XDG_HOME/bash/bash_functions
+fi
+
+# custom conda initialization
+# try a global install
+__conda_setup="$('/usr/local/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    # if not installed globally, fall back to local
+    __conda_setup="$('~/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+    if [ $? -eq 0 ]; then
+        eval "$__conda_setup"
+    fi
+    # else no conda found
+fi
+unset __conda_setup
+
+# configure rust if available
+CARGO_ENV=$HOME/.cargo/env
+if [[ -f $CARGO_ENV ]]
+then
+  source $CARGO_ENV
+fi
+
+export ENNCLAVE_HOME=~/Projects/eNNclave
+export EDITOR=nvim
+
+# docker_rootless setup
+if [ -f ${HOME}/bin/docker ];
+then
+    export PATH=${HOME}/bin:$PATH
+    export DOCKER_HOST=unix:///run/user/1000/docker.sock
+fi
+
+# dorky greeter
+echo -e "\n\n\e[33m\tWake up, samurai.\n\tWe have a city to burn.\e[0m\n\n"
