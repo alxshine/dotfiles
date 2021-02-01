@@ -76,7 +76,7 @@ link_dir(){
 dialog bash
 if [[ $? -eq 0 ]]; then
   link_dir bash
-  echo -e 'export XDG_HOME=$HOME/.config\nsource $XDG_HOME/bash/bashrc' >> $HOME/.bashrc
+  echo -e 'export XDG_CONFIG_HOME=$HOME/.config\nsource $XDG_CONFIG_HOME/bash/bashrc' >> $HOME/.bashrc
 fi
 
 dialog neovim
@@ -94,3 +94,7 @@ if [[ $? -eq 0 ]]; then
   link_dir gdb
 fi
 
+dialog vim 
+if [[ $? -eq 0 ]]; then
+  ln -s ${current_dir}/vim/vimrc ~/.vimrc
+fi
