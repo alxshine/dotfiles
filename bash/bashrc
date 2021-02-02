@@ -3,12 +3,12 @@
 # ~/.bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
-if [ -f $XDG_HOME/bash/bash_aliases ]; then
-    . $XDG_HOME/bash/bash_aliases
+if [ -f $XDG_CONFIG_HOME/bash/bash_aliases ]; then
+    . $XDG_CONFIG_HOME/bash/bash_aliases
 fi
 
-if [ -f $XDG_HOME/bash/bash_functions ]; then
-  . $XDG_HOME/bash/bash_functions
+if [ -f $XDG_CONFIG_HOME/bash/bash_functions ]; then
+  . $XDG_CONFIG_HOME/bash/bash_functions
 fi
 
 # custom conda initialization

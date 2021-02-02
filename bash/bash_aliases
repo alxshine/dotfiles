@@ -46,3 +46,7 @@ alias lc="latexmk --pvc"
 alias univpn="sudo openconnect vpn.uibk.ac.at -u c7031199 --passwd-on-stdin < ~/.pass/uibk.txt"
 
 alias vim=nvim
+
+# taskwarrior stuff
+alias tn="task next -backburner"
+alias backburner="task +backburner"
