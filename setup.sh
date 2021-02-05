@@ -1,7 +1,7 @@
 #!/bin/bash
 
 config_dir="${HOME}/.config"
-current_dir="../Projects/dotFiles"
+current_dir=$(pwd)
 
 dialog(){
   read -p "configure ${1}? [Y/n]" response
