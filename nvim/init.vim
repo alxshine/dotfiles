@@ -17,6 +17,7 @@ Plug 'scrooloose/nerdcommenter'
 "Visuals
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'morhetz/gruvbox'
 
 " Distraction free
 Plug 'junegunn/goyo.vim'
@@ -29,11 +30,18 @@ let g:deoplete#enable_at_startup = 0
 " Deoplete completions
 
 " Snippets
-" Plug 'Shougo/neosnippet.vim'
-" Plug 'Shougo/neosnippet-snippets'
+Plug 'Shougo/neosnippet.vim'
+Plug 'Shougo/neosnippet-snippets'
 
 " Git
 Plug 'tpope/vim-fugitive'
+" Plug 'mhinz/vim-signify'
+
+" Tmux navigation
+Plug 'christoomey/vim-tmux-navigator'
+
+" Whitespaces
+Plug 'ntpeters/vim-better-whitespace'
 
 call plug#end()
 
@@ -69,6 +77,7 @@ nmap <silent> ]Q :clast<CR>
 " ####### Visuals #######
 " let's be honest, this should be done by the terminal
 let g:airline_theme='monochrome'
+colorscheme gruvbox
 
 " ####### Distraction Free #######
 :nnoremap <silent> <Leader>z :Goyo 100x90%<CR>
