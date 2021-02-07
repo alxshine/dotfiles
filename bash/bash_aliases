@@ -50,3 +50,4 @@ alias vim=nvim
 # taskwarrior stuff
 alias next="task next -BLOCKED"
 alias backburner="task +backburner"
+alias fin="task end:tod count"
