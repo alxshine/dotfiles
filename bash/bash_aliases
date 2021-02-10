@@ -39,7 +39,6 @@ alias xc="xsel -b"
 alias xp="xsel -bp"
 
 alias vim=nvim
-alias tmux="tmux -f $HOME/.config/tmux/tmux.conf"
 
 # taskwarrior stuff
 alias next="task next -BLOCKED"

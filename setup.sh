@@ -1,7 +1,7 @@
 #!/bin/bash
 
 config_dir="${HOME}/.config"
-current_dir="../Projects/dotFiles"
+current_dir=`pwd`
 
 dialog(){
   read -p "configure ${1}? [Y/n]" response
@@ -94,7 +94,12 @@ if [[ $? -eq 0 ]]; then
   link_dir gdb
 fi
 
-dialog vim 
+dialog vim
 if [[ $? -eq 0 ]]; then
   ln -s ${current_dir}/vim/vimrc ~/.vimrc
+fi
+
+dialog tmux
+if [[ $? -eq 0 ]]; then
+  ln -s ${current_dir}/tmux/tmux.conf ~/.tmux.conf
 fi
