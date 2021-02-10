@@ -18,17 +18,15 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'morhetz/gruvbox'
+Plug 'junegunn/rainbow_parentheses.vim'
 
 " Distraction free
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-" Use deoplete.
-let g:deoplete#enable_at_startup = 0
 
 " Deoplete completions
-
 " Snippets
 Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
@@ -47,7 +45,7 @@ call plug#end()
 
 " ####### General config #######
 " set leader to something usable
-let mapleader =  "," 
+let mapleader =  ","
 
 " ####### Plugin config #######
 " FZF
@@ -56,13 +54,19 @@ let mapleader =  ","
 " Nerdcommenter
 let g:NERDSpaceDelims = 1
 
+" Use deoplete.
+let g:deoplete#enable_at_startup = 1
+
+" rainbow_parentheses
+autocmd VimEnter * RainbowParentheses
+
 " ####### Search stuff #######
 set hlsearch
 set smartcase
-:nnoremap <silent> <C-l> :nohlsearch<CR>:redraw<Bar>:echo<CR>
+:nnoremap <silent> <Leader><space> :nohlsearch<CR>:redraw<Bar>:echo<CR>
 
 " ####### Usability for programming #######
-set tabstop=2 shiftwidth=2 expandtab
+set tabstop=4 shiftwidth=4 expandtab
 set mouse=a
 set number
 nmap <silent> <Leader>g :Git<CR>
@@ -78,6 +82,7 @@ nmap <silent> ]Q :clast<CR>
 " let's be honest, this should be done by the terminal
 let g:airline_theme='monochrome'
 colorscheme gruvbox
+let g:limelight_conceal_ctermfg='darkgray'
 
 " ####### Distraction Free #######
 :nnoremap <silent> <Leader>z :Goyo 100x90%<CR>
