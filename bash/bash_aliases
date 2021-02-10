@@ -32,22 +32,18 @@ alias gdb='gdb-multiarch -q'
 alias gdd='gdb-multiarch -q -x ~/.config/gdb/dashboard'
 alias gef='gdb-multiarch -q -x ~/.config/gdb/gef.py'
 alias r='R -q --no-save'
-alias apktool='java -jar ~/Tools/apktool/apktool_2.4.1.jar'
-alias dcu="docker-compose up"
+alias sizes="du --max-depth=1 -h"
 
 #clipboard
 alias xc="xsel -b"
 alias xp="xsel -bp"
 
-#latex stuff
-alias lc="latexmk --pvc"
-
-# vpn stuff
-alias univpn="sudo openconnect vpn.uibk.ac.at -u c7031199 --passwd-on-stdin < ~/.pass/uibk.txt"
-
 alias vim=nvim
+alias tmux="tmux -f $HOME/.config/tmux/tmux.conf"
 
 # taskwarrior stuff
 alias next="task next -BLOCKED"
 alias backburner="task +backburner"
 alias fin="task end:tod count"
+alias todo="task next sched:tod"
+alias toda="task add sched:tod"
