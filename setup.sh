@@ -103,3 +103,8 @@ dialog tmux
 if [[ $? -eq 0 ]]; then
   ln -s ${current_dir}/tmux/tmux.conf ~/.tmux.conf
 fi
+
+dialog docker
+if [[ $? -eq 0 ]]; then
+    curl -fsSL https://get.docker.com/rootless | sh
+fi
