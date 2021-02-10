@@ -53,5 +53,16 @@ then
     export DOCKER_HOST=unix:///run/user/1000/docker.sock
 fi
 
+# Base16 Shell
+BASE16_SHELL="$XDG_CONFIG_HOME/base16-shell"
+if [[ ! -d $BASE16_SHELL ]]; then
+	echo "Cloning base16"
+	git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shell
+fi
+[ -n "$PS1" ] && \
+    [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
+        eval "$("$BASE16_SHELL/profile_helper.sh")"
+base16_gruvbox-dark-hard
+
 # dorky greeter
 echo -e "\n\n\e[33m\tWake up, samurai.\n\tWe have a city to burn.\e[0m\n\n"
