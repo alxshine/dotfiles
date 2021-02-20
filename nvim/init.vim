@@ -115,6 +115,8 @@ autocmd BufNewFile,BufRead *.cls set syntax=tex
 " ####### Various neat little things ######
 " spawn terminal
 :nnoremap <silent> <Leader>t :!termite -d `pwd` 2>/dev/null &<CR><CR>
+:nnoremap <silent> <Leader>n :bn<CR>
+:nnoremap <silent> <Leader>p :bp<CR>
 
 " Conceal markers.
 if has('conceal')
