@@ -33,3 +33,15 @@ tm() {
 
     tmux att -t "$project" || tmux new -s "$project"
 }
+
+# doc, start dev docker for current project
+doc() {
+    if [ -z "$1" ];
+    then
+        project=$(basename $(pwd))
+    else
+        project=$1
+    fi
+
+    docker exec -it "$project" bash 2>/dev/null || docker start -ai "$project"
+}
