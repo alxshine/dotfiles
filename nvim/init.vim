@@ -12,6 +12,7 @@ endif
 call plug#begin("~/.local/share/nvim/plugins")
 
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 Plug 'scrooloose/nerdcommenter'
 
 "Visuals
@@ -49,7 +50,9 @@ let mapleader =  ","
 
 " ####### Plugin config #######
 " FZF
-:nnoremap <silent> <Leader>f :FZF<CR>
+:nnoremap <silent> <Leader>f :Files<CR>
+:nnoremap <silent> <Leader>b :Buffers<CR>
+:nnoremap <silent> <Leader>r :Rg<CR>
 
 " Nerdcommenter
 let g:NERDSpaceDelims = 1
