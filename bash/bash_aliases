@@ -33,6 +33,7 @@ alias gdd='gdb-multiarch -q -x ~/.config/gdb/dashboard'
 alias gef='gdb-multiarch -q -x ~/.config/gdb/gef.py'
 alias r='R -q --no-save'
 alias sizes="du --max-depth=1 -h"
+alias texstack='docker run --rm -it --mount type=bind,src=$(pwd),dst=/workspace -u $(id -u):$(id -g) tex'
 
 #clipboard
 alias xc="xsel -b"
@@ -44,5 +45,5 @@ alias vim=nvim
 alias next="task next -BLOCKED"
 alias backburner="task +backburner"
 alias fin="task end:tod count"
-alias todo="task next sched:tod"
+alias todo="task sched:tod"
 alias toda="task add sched:tod"
