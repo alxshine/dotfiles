@@ -11,7 +11,7 @@ endif
 " ####### Plugin setup #######
 call plug#begin("~/.local/share/nvim/plugins")
 
-Plug 'junegunn/fzf'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'scrooloose/nerdcommenter'
 
 "Visuals
