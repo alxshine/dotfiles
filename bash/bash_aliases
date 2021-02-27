@@ -41,6 +41,7 @@ alias xc="xsel -b"
 alias xp="xsel -bp"
 
 alias vim=nvim
+alias uniconnect="sudo openconnect -u c7031199 vpn.uibk.ac.at"
 
 # taskwarrior stuff
 alias next="task next -BLOCKED"
