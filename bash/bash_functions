@@ -31,7 +31,7 @@ tm() {
         project=$1
     fi
 
-    tmux att -t "$project" || tmux new -s "$project"
+    tmux att -t "=$project" || tmux new -s "$project"
 }
 
 # doc, start dev docker for current project

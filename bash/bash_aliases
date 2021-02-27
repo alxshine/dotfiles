@@ -34,6 +34,7 @@ alias gef='gdb-multiarch -q -x ~/.config/gdb/gef.py'
 alias r='R -q --no-save'
 alias sizes="du --max-depth=1 -h"
 alias texstack='docker run --rm -it --mount type=bind,src=$(pwd),dst=/workspace -u $(id -u):$(id -g) tex'
+alias datasci='docker run -p 8888:8888 --rm -it  -e JUPYTER_ENABLE_LAB=yes -v $(pwd):/home/jovyan/work jupyter/datascience-notebook'
 
 #clipboard
 alias xc="xsel -b"
