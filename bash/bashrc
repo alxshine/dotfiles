@@ -63,8 +63,4 @@ if [[ $- == *i* ]]; then
 
     [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
         eval "$("$BASE16_SHELL/profile_helper.sh")"
-    base16_gruvbox-dark-hard
-
-    # dorky greeter
-    echo -e "\n\n\e[33m\tWake up, samurai.\n\tWe have a city to burn.\e[0m\n\n"
 fi
