@@ -74,6 +74,9 @@ set mouse=a
 set number
 nmap <silent> <Leader>g :Git<CR>
 
+" special case for yaml files
+autocmd FileType yaml setlocal tabstop=2 shiftwidth=2 expandtab
+
 " make and quickfix
 nmap <F7> :make<CR>
 nmap <silent> ]q :cnext<CR>
