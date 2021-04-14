@@ -18,7 +18,6 @@ Plug 'scrooloose/nerdcommenter'
 "Visuals
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'morhetz/gruvbox'
 Plug 'junegunn/rainbow_parentheses.vim'
 
 " Distraction free
@@ -87,7 +86,7 @@ nmap <silent> ]Q :clast<CR>
 " ####### Visuals #######
 " let's be honest, this should be done by the terminal
 let g:airline_theme='monochrome'
-colorscheme gruvbox
+" colorscheme base16-horizon-dark
 let g:limelight_conceal_ctermfg='darkgray'
 
 " ####### Distraction Free #######
