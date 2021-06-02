@@ -37,11 +37,10 @@ alias texstack='docker run --rm -it --mount type=bind,src=$(pwd),dst=/workspace 
 alias datasci='docker run -p 8888:8888 --rm -it  -e JUPYTER_ENABLE_LAB=yes -v $(pwd):/home/jovyan/work jupyter/datascience-notebook'
 
 #clipboard
-alias xc="xsel -b"
-alias xp="xsel -bp"
-
 alias vim=nvim
 alias uniconnect="sudo openconnect -u c7031199 vpn.uibk.ac.at"
+
+alias fd=fdfind
 
 # taskwarrior stuff
 alias next="task next -BLOCKED"
