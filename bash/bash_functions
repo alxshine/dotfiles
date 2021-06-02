@@ -11,17 +11,6 @@ rgs() {
   fi
 }
 
-# specialized preview for todos
-td() {
-result=`rg --vimgrep -i TODO | fzf --preview "echo {} | awk -F ':' -f ~/.awk/vimgrep_preview.awk"`
-# result=`rg --vimgrep -i TODO | fzf --preview "echo {}"`
-
-if ! [ -z $result ]; then
-  IFS=':' read -ra PARTS <<< $result
-  vim ${PARTS[0]} +${PARTS[1]}
-fi
-}
-
 # tm, attach to tmux session for project
 tm() {
     if [ -z "$1" ];
