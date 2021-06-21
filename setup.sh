@@ -104,6 +104,8 @@ if [[ $? -eq 0 ]]; then
     ln -s ${current_dir}/tmux/tmux.conf ~/.tmux.conf
 fi
 
+exit 0 # the rest isn't ever used
+
 dialog docker
 if [[ $? -eq 0 ]]; then
     curl -fsSL https://get.docker.com/rootless | sh
