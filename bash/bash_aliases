@@ -15,15 +15,6 @@ alias la='ls -laFA'
 alias l='ls -CF'
 alias dir='ls -laH'
 
-#python stuff
-alias pip='python -m pip'
-alias pi='python -m pip install --user'
-alias ipy='ipython3'
-
-#misc stuff
-alias here="nautilus . &"
-alias dup='alacritty --working-directory "`pwd`"&'
-
 #programming stuff
 alias hl='highlight -O ansi'
 alias ssh='ssh -A'
@@ -42,10 +33,3 @@ alias vim=nvim
 alias uniconnect="sudo openconnect -u c7031199 vpn.uibk.ac.at"
 
 alias fd=fdfind
-
-# taskwarrior stuff
-alias next="task next -BLOCKED"
-alias backburner="task +backburner"
-alias fin="task end:tod count"
-alias todo="task sched:tod"
-alias toda="task add sched:tod"
