@@ -41,11 +41,16 @@ Plug 'christoomey/vim-tmux-navigator'
 " Whitespaces
 Plug 'ntpeters/vim-better-whitespace'
 
+" load local custom config if exists
+if filereadable(expand("$HOME/.config/nvim/local.vim"))
+    source $HOME/.config/nvim/local.vim
+endif
+
 call plug#end()
 
 " ####### General config #######
 " set leader to something usable
-let mapleader =  ","
+let mapleader =  " "
 
 " ####### Plugin config #######
 " FZF
@@ -125,4 +130,3 @@ if has('conceal')
   set conceallevel=2
   " set concealcursor=nv
 endif
-
