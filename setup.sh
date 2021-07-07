@@ -104,19 +104,26 @@ if [[ $? -eq 0 ]]; then
     ln -s ${current_dir}/tmux/tmux.conf ~/.tmux.conf
 fi
 
+dialog fzf
+if [[ $? -eq 0 ]]; then
+    git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+    ~/.fzf/install
+fi
+
 exit 0 # the rest isn't ever used
 
-dialog docker
-if [[ $? -eq 0 ]]; then
-    curl -fsSL https://get.docker.com/rootless | sh
-fi
+# dialog docker
+# if [[ $? -eq 0 ]]; then
+    # curl -fsSL https://get.docker.com/rootless | sh
+# fi
 
-dialog rofi
-if [[ $? -eq 0 ]]; then
-    link_dir rofi
-fi
+# dialog rofi
+# if [[ $? -eq 0 ]]; then
+    # link_dir rofi
+# fi
 
-dialog i3-gaps
-if [[ $? -eq 0 ]]; then
-    link_dir i3
-fi
+# dialog i3-gaps
+# if [[ $? -eq 0 ]]; then
+    # link_dir i3
+# fi
+
