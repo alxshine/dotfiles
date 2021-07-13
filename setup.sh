@@ -84,9 +84,9 @@ if [[ $? -eq 0 ]]; then
     link_file "nvim/init.vim"
 fi
 
-dialog emacs
+dialog doom
 if [[ $? -eq 0 ]]; then
-    link_file "emacs/init.el"
+    link_dir doom
 fi
 
 dialog gdb
