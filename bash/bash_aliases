@@ -27,6 +27,8 @@ alias sizes="du --max-depth=1 -h"
 alias texstack='docker run --rm -it --mount type=bind,src=$(pwd),dst=/workspace -u $(id -u):$(id -g) tex'
 alias datasci='docker run -p 8888:8888 --rm -it  -e JUPYTER_ENABLE_LAB=yes -v $(pwd):/home/jovyan/work jupyter/datascience-notebook'
 alias act='conda activate $(basename $(pwd))'
+alias genv='source guild-env'
+alias pipdeps='pip install -U neovim pdbpp ipython'
 
 #clipboard
 alias vim=nvim
