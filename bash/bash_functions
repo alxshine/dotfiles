@@ -34,3 +34,14 @@ doc() {
 
     docker exec -it "$project" bash 2>/dev/null || docker start -ai "$project"
 }
+
+projcheck() {
+    projdir=$HOME/Projects
+    projects=$(ls $projdir)
+
+    for project in $projects
+    do
+        path=$projdir/$project
+        (cd $path; git status | grep clean > /dev/null) || echo "$project is dirty"
+    done
+}
