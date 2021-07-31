@@ -63,7 +63,6 @@ project_root() {
     fi
 }
 
-
 venv() {
     root=$(project_root)
 
@@ -71,5 +70,5 @@ venv() {
         name=$(basename $root)
         (cd $root; virtualenv venv --prompt "($name) ")
     fi
-    source $root/venv/bin/activate 2> /dev/null
+    source "$root/venv/bin/activate"
 }
