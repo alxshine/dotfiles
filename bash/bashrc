@@ -28,6 +28,12 @@ then
   source $CARGO_ENV
 fi
 
+LOCAL_PATH=$HOME/.local/bin
+if [[ -d $LOCAL_PATH ]]
+then
+    export PATH=$PATH:$LOCAL_PATH
+fi
+
 export ENNCLAVE_HOME=~/Projects/eNNclave
 export EDITOR=nvim
 
@@ -42,3 +48,5 @@ if [[ $- == *i* ]]; then
     [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
         eval "$("$BASE16_SHELL/profile_helper.sh")"
 fi
+
+
