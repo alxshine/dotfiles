@@ -66,6 +66,11 @@ project_root() {
 venv() {
     root=$(project_root)
 
+    if [ $? -eq 128 ]; then
+        echo "not in a git project, using current working directory"
+        root=$(pwd)
+    fi
+
     if [ ! -d $root/venv ]; then
         name=$(basename $root)
         (cd $root; virtualenv venv --prompt "($name) ")
