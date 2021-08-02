@@ -99,3 +99,5 @@
            "* %U %?\n %i\n %a"
            :heading "Changelog"
            :prepend t))))
+
+(add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
