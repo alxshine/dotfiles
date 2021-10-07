@@ -73,7 +73,7 @@ venv() {
 
     if [ ! -d $root/venv ]; then
         name=$(basename $root)
-        (cd $root; virtualenv venv --prompt "($name) ")
+        (cd $root; python -m venv venv --prompt "$name")
     fi
     source "$root/venv/bin/activate"
 }
