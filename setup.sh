@@ -110,12 +110,12 @@ if [[ $? -eq 0 ]]; then
     ~/.fzf/install
 fi
 
+exit 0 # the rest isn't ever used
+
 dialog gnome
 if [[ $? -eq 0 ]]; then
     . gnome/settings.sh
 fi
-
-exit 0 # the rest isn't ever used
 
 # dialog docker
 # if [[ $? -eq 0 ]]; then
