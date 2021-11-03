@@ -25,5 +25,7 @@ source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 [[ ! -f ~/.config/zsh/functions.zwc ]] || source ~/.config/zsh/functions.zwc
 [[ ! -f ~/.config/zsh/aliases.zwc ]] || source ~/.config/zsh/aliases.zwc
 
-# fix some zsh vim mode things
-bindkey "^R" history-incremental-search-backward
+# fzf bindings
+source /usr/share/fzf/key-bindings.zsh
+source /usr/share/fzf/completion.zsh
+# bindkey "^R" history-incremental-search-backward
