@@ -35,7 +35,6 @@ alias sr='streamlit run'
 alias vim=nvim
 alias uniconnect="sudo openconnect -u c7031199 vpn.uibk.ac.at"
 
-alias fd=fdfind
 
 # wake on lan
 alias wake-server="sudo etherwake -i enx0050b6b42d5f 04:d4:c4:5b:17:2d"
