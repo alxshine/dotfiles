@@ -1,0 +1,43 @@
+# git stuff
+alias gf='git fetch'
+alias gcl='git clone'
+alias gco='git checkout'
+alias gd='git diff'
+alias ga='git add'
+alias gst='git status'
+alias gc='git commit'
+alias gp='git push'
+alias gl='git pull'
+
+#ls stuff
+alias ll='ls -lF'
+alias la='ls -laFA'
+alias l='ls -CF'
+alias dir='ls -laH'
+
+#programming stuff
+alias hl='highlight -O ansi'
+alias ssh='ssh -A'
+alias symsearch='nm -o --defined-only --demangle `find -name "**.so" -o -name "**.a" -o -name "**.o"` | fzf'
+alias gdb='gdb -q'
+alias gdd='gdb -q -x ~/.config/gdb/dashboard'
+alias gef='gdb -q -x ~/.config/gdb/gef.py'
+alias r='R -q --no-save'
+alias sizes="du --max-depth=1 -h"
+alias texstack='docker run --rm -it --mount type=bind,src=$(pwd),dst=/workspace -u $(id -u):$(id -g) tex'
+alias datasci='docker run -p 8888:8888 --rm -it  -e JUPYTER_ENABLE_LAB=yes -v $(pwd):/home/jovyan/work jupyter/datascience-notebook'
+alias act='conda activate $(basename $(pwd))'
+alias genv='source guild-env'
+alias pipdeps='pip install -U neovim pdbpp ipython'
+alias sr='streamlit run'
+
+#clipboard
+alias vim=nvim
+alias uniconnect="sudo openconnect -u c7031199 vpn.uibk.ac.at"
+
+
+# wake on lan
+alias wake-server="sudo etherwake -i enx0050b6b42d5f 04:d4:c4:5b:17:2d"
+alias wake-consumer="sudo etherwake -i enx0050b6b42d5f 04:92:26:c0:b3:d7"
+alias wake-rechenknecht="sudo etherwake -i enx0050b6b42d5f 10:c3:7b:45:37:4d"
+alias wake-all="wake-server; wake-consumer; wake-rechenknecht"

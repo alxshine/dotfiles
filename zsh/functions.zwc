@@ -1,0 +1,35 @@
+#!/bin/zsh
+
+
+project_root() {
+    # find the root of the current project (a.k.a. git repository)
+
+    # test if we are in a git repo
+    git status >/dev/null 2>&1
+    returncode=$?
+    if ! git status >/dev/null 2>&1; then
+        return 128
+    fi
+
+    if [ -d .git ]; then
+        pwd
+    else
+        (cd .. && project_root)
+    fi
+}
+
+venv () 
+{ 
+    root=$(project_root);
+    if [ $? -eq 128 ]; then
+        echo "not in a git project, using current working directory";
+        root=$(pwd);
+    fi;
+    if [ ! -d $root/venv ]; then
+        name=$(basename $root);
+        ( cd $root;
+        python -m venv venv --prompt "$name" );
+    fi;
+    source "$root/venv/bin/activate"
+}
+
