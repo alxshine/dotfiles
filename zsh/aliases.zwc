@@ -33,7 +33,6 @@ alias sr='streamlit run'
 
 #clipboard
 alias vim=nvim
-alias uniconnect="sudo openconnect -u c7031199 vpn.uibk.ac.at"
 
 
 # wake on lan
