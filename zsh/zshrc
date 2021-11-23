@@ -22,8 +22,12 @@ compinit
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 
-[[ ! -f ~/.config/zsh/functions.zwc ]] || source ~/.config/zsh/functions.zwc
-[[ ! -f ~/.config/zsh/aliases.zwc ]] || source ~/.config/zsh/aliases.zwc
+try_load () {
+    [[ ! -f ~/.config/zsh/"$1" ]] || source ~/.config/zsh/"$1"
+}
+try_load functions.zwc
+try_load aliases.zwc
+try_load custom.zwc
 
 # fzf bindings
 source /usr/share/fzf/key-bindings.zsh
