@@ -79,6 +79,12 @@ if [[ $? -eq 0 ]]; then
     echo -e 'export XDG_CONFIG_HOME=$HOME/.config\nsource $XDG_CONFIG_HOME/bash/bashrc' >> $HOME/.bashrc
 fi
 
+dialog zsh
+if [[ $? -eq 0 ]]; then
+    link_dir zsh
+    echo -e 'source ~/.config/zsh/zshrc' > $HOME/.zshrc
+fi
+
 dialog neovim
 if [[ $? -eq 0 ]]; then
     link_file "nvim/init.vim"
