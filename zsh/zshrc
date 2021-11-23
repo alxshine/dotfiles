@@ -22,14 +22,17 @@ compinit
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 
-try_load () {
-    [[ ! -f ~/.config/zsh/"$1" ]] || source ~/.config/zsh/"$1"
+try_source () {
+    [[ ! -f "$1" ]] || source "$1"
 }
-try_load functions.zwc
-try_load aliases.zwc
-try_load custom.zwc
+try_source ~/.config/zsh/functions.zwc
+try_source ~/.config/zsh/aliases.zwc
+try_source ~/.config/zsh/custom.zwc
 
 # fzf bindings
-source /usr/share/fzf/key-bindings.zsh
-source /usr/share/fzf/completion.zsh
+try_source /usr/share/fzf/key-bindings.zsh
+try_source /usr/share/fzf/completion.zsh
 # bindkey "^R" history-incremental-search-backward
+
+# add .local to path
+export PATH="$HOME/.local/bin:$PATH"
