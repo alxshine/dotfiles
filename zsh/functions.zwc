@@ -34,5 +34,24 @@ venv () {
 
 uniconnect () {
     kwallet-query kdewallet -f Custom -r UIBK 2>/dev/null | \
+    sudo openconnect vpn.uibk.ac.at -u c7031199 --passwd-on-stdin
+}
+
+unislice () {
+    kwallet-query kdewallet -f Custom -r UIBK 2>/dev/null | \
     sudo openconnect vpn.uibk.ac.at -u c7031199 -s 'vpn-slice 138.232.0.0/16' --passwd-on-stdin
+}
+
+get_running() {
+    ps u | grep "$1" | grep -v grep
+}
+
+test_running() {
+    get_running "$1" >/dev/null 2>&1
+}
+
+wait_for() {
+    while test_running "$1"; do
+        sleep 5
+    done
 }
