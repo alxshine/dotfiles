@@ -24,10 +24,17 @@ venv () {
         echo "not in a git project, using current working directory";
         root=$(pwd);
     fi;
+
+	if (( ${+1} )); then
+    	python=$1
+	else
+    	python='python'
+	fi
+
     if [ ! -d $root/venv ]; then
         name=$(basename $root);
         ( cd $root;
-        python -m venv venv --prompt "$name" );
+        $python -m venv venv --prompt "$name" );
     fi;
     source "$root/venv/bin/activate"
 }
