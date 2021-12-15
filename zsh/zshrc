@@ -1,3 +1,5 @@
+#!/bin/zsh
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -12,8 +14,15 @@ SAVEHIST=1000
 setopt extendedglob nomatch
 
 # keybinds
-bindkey -e
 bindkey '^[[3~' delete-char
+
+# vim binds
+# bindkey -v
+
+# emacs binds
+bindkey -e
+bindkey '^[[1;5D' emacs-backward-word
+bindkey '^[[1;5C' emacs-forward-word
 
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
