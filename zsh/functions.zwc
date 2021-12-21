@@ -64,6 +64,6 @@ wait_for() {
 }
 
 kak() {
-	name=$(basename $(project_root))
+	name=$(basename $(project_root || pwd))
 	/usr/bin/kak -c $name $1 2>/dev/null || /usr/bin/kak -s $name $1
 }
