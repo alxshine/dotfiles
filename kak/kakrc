@@ -53,3 +53,8 @@ map global normal <F6> :format<ret>
 hook global BufSetOption filetype=python %{
 	set-option buffer formatcmd 'black -'
 }
+
+# JSON
+hook global BufSetOption filetype=json %{
+    set-option buffer formatcmd 'jq'
+}
