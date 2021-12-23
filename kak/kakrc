@@ -26,8 +26,8 @@ hook global BufCreate .*\.ino %{
 #         editorconfig-load
 # }
 
-# map global insert <tab> '<a-;><gt>'
-# map global insert <s-tab> '<a-;><lt>'
+map global insert <tab> '<a-;><gt>'
+map global insert <s-tab> '<a-;><lt>'
 
 def ide %{
     rename-client main
@@ -45,5 +45,11 @@ map global user t ':terminal $SHELL<ret>' -docstring 'open new terminal at curre
 map global user c ':comment-line<ret>' -docstring 'comment marked lines'
 map global user e ':make-next-error<ret>' -docstring 'goto next make error'
 
-# make bind
-map global normal <F7> :make<ret> 
+# binds
+map global normal <F7> :make<ret>
+map global normal <F6> :format<ret>
+
+# Python
+hook global BufSetOption filetype=python %{
+	set-option buffer formatcmd 'black -'
+}
