@@ -12,6 +12,7 @@ alias gp='git push'
 alias gl='git pull'
 
 #ls stuff
+alias ls='ls --color=auto'
 alias ll='ls -lF'
 alias la='ls -laFA'
 alias l='ls -CF'
