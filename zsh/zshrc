@@ -45,6 +45,7 @@ try_source ~/.config/zsh/custom.zwc
 # fzf bindings
 try_source /usr/share/fzf/key-bindings.zsh
 try_source /usr/share/fzf/completion.zsh
+export FZF_DEFAULT_COMMAND='fd'
 # bindkey "^R" history-incremental-search-backward
 
 # add .local to path
