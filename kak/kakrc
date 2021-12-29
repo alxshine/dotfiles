@@ -48,6 +48,7 @@ map global user e ':make-next-error<ret>' -docstring 'goto next make error'
 # binds
 map global normal <F7> :make<ret>
 map global normal <F6> :format<ret>
+map global normal <a-s-c> %{<a-|>xclip -i -selection 'clipboard'<ret>}
 
 # Python
 hook global BufSetOption filetype=python %{
@@ -57,4 +58,5 @@ hook global BufSetOption filetype=python %{
 # JSON
 hook global BufSetOption filetype=json %{
     set-option buffer formatcmd 'jq'
+
 }
