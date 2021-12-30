@@ -19,18 +19,18 @@ font pango:monospace 8
 
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
-exec --no-startup-id dex --autostart --environment i3
+# exec --no-startup-id dex --autostart --environment i3
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+# exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
-exec --no-startup-id nm-applet
+# exec --no-startup-id nm-applet
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -42,10 +42,10 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 # use these keys for focus, movement, and resize directions when reaching for
 # the arrows is not convenient
 # COMMENT: I have convenient arrows, so remove these to reduce clashes
-# set $up l
-# set $down k
-# set $left j
-# set $right semicolon
+set $left h
+set $up t
+set $down n
+set $right s
 set $mod Mod4
 
 # use Mouse+$mod to drag floating windows to their wanted position
@@ -66,10 +66,10 @@ bindsym $mod+d exec --no-startup-id dmenu_run
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # change focus
-# bindsym $mod+$left focus left
-# bindsym $mod+$down focus down
-# bindsym $mod+$up focus up
-# bindsym $mod+$right focus right
+bindsym $mod+$left focus left
+bindsym $mod+$down focus down
+bindsym $mod+$up focus up
+bindsym $mod+$right focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -78,10 +78,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-# bindsym $mod+Shift+$left move left
-# bindsym $mod+Shift+$down move down
-# bindsym $mod+Shift+$up move up
-# bindsym $mod+Shift+$right move right
+bindsym $mod+Shift+$left move left
+bindsym $mod+Shift+$down move down
+bindsym $mod+Shift+$up move up
+bindsym $mod+Shift+$right move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -90,7 +90,7 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+h split h
+bindsym $mod+w split h
 
 # split in vertical orientation
 bindsym $mod+v split v
@@ -99,8 +99,8 @@ bindsym $mod+v split v
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
+bindsym $mod+g layout stacking
+bindsym $mod+c layout tabbed
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
@@ -174,10 +174,10 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        # bindsym $left       resize shrink width 10 px or 10 ppt
-        # bindsym $down       resize grow height 10 px or 10 ppt
-        # bindsym $up         resize shrink height 10 px or 10 ppt
-        # bindsym $right      resize grow width 10 px or 10 ppt
+        bindsym $left       resize shrink width 10 px or 10 ppt
+        bindsym $down       resize grow height 10 px or 10 ppt
+        bindsym $up         resize shrink height 10 px or 10 ppt
+        bindsym $right      resize grow width 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
         bindsym Left        resize shrink width 10 px or 10 ppt
@@ -207,15 +207,23 @@ for_window [class="plasmashell" window_type="notification"] floating enable, bor
 no_focus [class="plasmashell" window_type="notification"]
 
 # unlock kde wallet
-exec --no-startup-id /usr/lib/pam_kwallet_init
+# exec --no-startup-id /usr/lib/pam_kwallet_init
 
 # set background
-exec --no-startup-id picom 
-exec --no-startup-id feh --no-xinerama --bg-fill ~/Pictures/ultrawide/forest_ultra_wide.jpg
+exec --no-startup-id picom -i 1.0 -GC
+exec --no-startup-id feh --no-xinerama --bg-fill ~/Pictures/background
 
 
 # gaps
-gaps horizontal 380 # TODO: add toggle command
+gaps horizontal 320 # TODO: add toggle command
 gaps vertical 40
 gaps inner 20
 smart_gaps inverse_outer
+
+# colors
+# class                 border  backgr. text    indicator child_border
+client.focused          #3b6a6c #3b6a6c #d3c5a1 #458588   #458588
+client.focused_inactive #8f8372 #8f8372 #282828 #484e50   #5f676a
+client.unfocused        #282828 #282828 #c1b493 #292d2e   #222222
+client.urgent           #cc241d #cc241d #282828 #900000   #900000
+client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
