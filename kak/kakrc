@@ -65,3 +65,8 @@ hook global BufSetOption filetype=json %{
     set-option buffer formatcmd 'jq'
 
 }
+
+# LaTeX
+hook global BufSetOption filetype=latex %{
+    set-option buffer formatcmd 'latexindent'
+}
