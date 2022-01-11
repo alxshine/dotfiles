@@ -110,6 +110,11 @@ if [[ $? -eq 0 ]]; then
     ln -s ${current_dir}/tmux/tmux.conf ~/.tmux.conf
 fi
 
+dialog zathura
+if [[ $? -eq 0 ]]; then
+    link_dir zathura
+fi
+
 dialog fzf
 if [[ $? -eq 0 ]]; then
     git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
