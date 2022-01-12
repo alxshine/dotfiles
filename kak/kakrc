@@ -26,8 +26,8 @@ hook global BufCreate .*\.ino %{
 #         editorconfig-load
 # }
 
-hook global InsertChar , %{ try %{
-        exec -draft hH <a-k>\.,<ret> d
+hook global InsertChar . %{ try %{
+        exec -draft hH <a-k>,\.<ret> d
             exec <esc>
 }}
 
