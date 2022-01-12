@@ -43,8 +43,8 @@ set $refresh_i3status killall -SIGUSR1 i3status
 # the arrows is not convenient
 # COMMENT: I have convenient arrows, so remove these to reduce clashes
 set $left h
-set $up t
-set $down n
+set $up n
+set $down t
 set $right s
 set $mod Mod4
 
