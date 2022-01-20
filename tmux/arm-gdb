@@ -1,0 +1,15 @@
+#!/bin/zsh
+
+arg=$1
+if (( ${+1} )); then
+    main_file=$1
+else
+    printf "Usage: %s main_executable\n" $0
+    exit 1
+fi
+
+ARM_TOOLCHAIN=arm-none-eabi
+
+tmux new-session -d -s 'arm_debug' -n 'qemu' "qemu-arm -g 1234 $main_file"
+tmux new-window -d -t 'arm_debug:' -n 'gdb' "$ARM_TOOLCHAIN-gdb -q -ex 'target remote localhost:1234' --tui -f $main_file"
+tmux -2 attach-session -t 'arm_debug:gdb'
