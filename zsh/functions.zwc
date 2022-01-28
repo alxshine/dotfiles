@@ -63,7 +63,7 @@ get_processes() {
 }
 
 check_process() {
-    get_processes"$1" >/dev/null 2>&1
+    get_processes "$1" >/dev/null 2>&1
 }
 
 wait_process() {
@@ -98,3 +98,11 @@ wait_host() {
     done
 }
 
+wifi() {
+    if (( ! ${+1} )); then
+        printf "Usage: $0 wifi_name"
+        return 1
+    fi
+
+    nmcli c up $1 passwd-file "$HOME/.local/wifi/$1"
+}
