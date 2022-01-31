@@ -100,7 +100,7 @@ wait_host() {
 
 wifi() {
     if (( ! ${+1} )); then
-        printf "Usage: $0 wifi_name"
+        printf "Usage: $0 wifi_name\n"
         return 1
     fi
 

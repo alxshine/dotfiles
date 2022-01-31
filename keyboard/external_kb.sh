@@ -1,3 +1,3 @@
 #!/bin/bash
 
-setxkbmap -layout us,de -option grp:win_space_toggle
+setxkbmap -layout us,de -option -option ctrl:nocaps -option grp:shifts_toggle
