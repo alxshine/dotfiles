@@ -12,9 +12,14 @@ set $down n
 set $right s
 set $mod Mod4
 
+# basic WM bindings
 include parts/movement.conf
-include parts/launchers.conf
 include parts/resize.conf
+
+# tool definitions (not checked in)
+include parts/tools.conf
+# actual launcher bindings
+include parts/launchers.conf
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
