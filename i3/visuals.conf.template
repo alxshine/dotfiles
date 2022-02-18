@@ -1,0 +1,33 @@
+# class                 border  backgr. text    indicator child_border
+client.focused          #3b6a6c #3b6a6c #d3c5a1 #458588   #458588
+client.focused_inactive #8f8372 #8f8372 #282828 #484e50   #5f676a
+client.unfocused        #282828 #282828 #c1b493 #292d2e   #222222
+client.urgent           #cc241d #cc241d #282828 #900000   #900000
+client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+
+# set background
+# exec --no-startup-id picom -i 1.0 -b
+exec --no-startup-id xcompmgr &
+exec --no-startup-id feh --no-xinerama --bg-fill ~/Pictures/background
+
+# status bar
+bar {
+    status_command    i3status
+    position          bottom
+    # mode              hide
+    workspace_buttons yes
+    tray_output       none
+    
+    # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+    # font pango:FontAwesome 10
+
+    colors {
+        background #282828
+        statusline #c1b493
+
+        focused_workspace  #d3c5a1 #3b6a6c
+        inactive_workspace #8f8372 #282828
+        active_workspace   #282828 #c1b493
+        urgent_workspace   #ffffff #900000
+    }
+}
