@@ -1,5 +1,5 @@
 [options]
-font = Iosevka Term SS07 Regular 10
+font = Source Code Pro Regular 10
 
 [colors]
 # Base16 Gruvbox dark, pale
