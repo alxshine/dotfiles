@@ -3,7 +3,7 @@ add-highlighter global/ show-matching
 # add-highlighter global/ show-whitespaces
 add-highlighter global/ wrap
 
-colorscheme gruvbox-dark
+# colorscheme gruvbox-dark
 
 
 #### Plugins #####
