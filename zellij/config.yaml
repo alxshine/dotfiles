@@ -10,9 +10,6 @@ keybinds:
     normal:
         - action: [SwitchToMode: Tmux,]
           key: [Ctrl: 'b',]
-# potentially useful binds
-        # - action: [NewPane: ]
-        #   key: [ Alt: 'n',]
         - action: [MoveFocusOrTab: Left,]
           key: [ Alt: 'h',]
         - action: [MoveFocusOrTab: Right,]
