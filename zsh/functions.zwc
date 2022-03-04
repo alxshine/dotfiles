@@ -27,6 +27,10 @@ _project_helper() {
     fi
 }
 
+root() {
+    basename $(project_root)
+}
+
 venv () {
     root=$(project_root);
     if [ $? -eq 128 ]; then
@@ -41,7 +45,7 @@ venv () {
 	fi
 
     if [ ! -d $root/venv ]; then
-        name=$(basename $root);
+        name=$(root);
         ( cd $root;
         $python -m venv venv --prompt "$name" );
     fi;
@@ -74,7 +78,7 @@ wait_process() {
 
 kak() {
     root=$(project_root || pwd)
-	name=$(basename $root)
+	name=$(root)
 	/usr/bin/kak -c $name $1 2>/dev/null || /usr/bin/kak -s $name $1
 }
 
