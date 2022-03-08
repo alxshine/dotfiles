@@ -110,3 +110,11 @@ wifi() {
 
     nmcli c up $1 passwd-file "$HOME/.local/wifi/$1"
 }
+
+z() {
+    target_dir=`fd -td | fzf`
+    if [ $? -eq 0 ]; then
+        cd $target_dir
+    fi
+}
+
