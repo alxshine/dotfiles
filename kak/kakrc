@@ -45,8 +45,8 @@ def ide %{
     # set global docsclient docs
 }
 
-map global user b ':terminal kak -c %val{session}<ret>' -docstring 'split buffer into new terminal'
-map global user t ':terminal $SHELL<ret>' -docstring 'open new terminal at current location'
+# map global user b ':terminal kak -c %val{session}<ret>' -docstring 'split buffer into new terminal'
+# map global user t ':terminal zsh<ret>' -docstring 'open new terminal at current location'
 map global user c ':comment-line<ret>' -docstring 'comment marked lines'
 map global user e ':make-next-error<ret>' -docstring 'goto next make error'
 
@@ -69,4 +69,9 @@ hook global BufSetOption filetype=json %{
 # LaTeX
 hook global BufSetOption filetype=latex %{
     set-option buffer formatcmd 'latexindent'
+}
+
+# yaml
+hook global BufSetOption filetype=yaml %{
+    set-option buffer formatcmd 'yq -y . -'
 }
