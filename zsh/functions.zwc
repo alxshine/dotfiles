@@ -112,3 +112,12 @@ wifi() {
     nmcli c up $1 passwd-file "$HOME/.local/wifi/$1"
 }
 
+zp() {
+    PROJECT_PATH="$HOME/Projects"
+    chosen=`ls $PROJECT_PATH | fzf`
+
+    if [[ $? -eq 0 ]] ; then
+        cd ~/Projects/$chosen
+    fi
+}
+
