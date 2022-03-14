@@ -46,7 +46,7 @@ venv () {
 	fi
 
     if [ ! -d $root/venv ]; then
-        name=$(root);
+        name=$(basename project_root);
         ( cd $root;
         $python -m venv venv --prompt "$name" );
     fi;
