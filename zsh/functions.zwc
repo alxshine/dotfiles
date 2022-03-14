@@ -77,10 +77,17 @@ wait_process() {
     done
 }
 
-kak() {
-    root=$(project_root || pwd)
+kc() {
 	name=$(root)
-	/usr/bin/kak -c $name $1 2>/dev/null || /usr/bin/kak -s $name $1
+
+    # the following is based on
+    # https://github.com/mawww/kakoune/wiki/Kak-daemon-helper-:-1-session-per-project
+	socket_file=$(kak -l | grep $name)
+	if [[ $socket_file == "" ]]; then
+    	setsid kak -d -s $name &
+	fi
+
+	kak -c $name $@
 }
 
 check_host() {
