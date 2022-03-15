@@ -85,6 +85,7 @@ kc() {
 	socket_file=$(kak -l | grep $name)
 	if [[ $socket_file == "" ]]; then
     	setsid kak -d -s $name &
+    	sleep 0.1
 	fi
 
 	kak -c $name $@
