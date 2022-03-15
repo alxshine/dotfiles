@@ -84,7 +84,7 @@ kc() {
     # https://github.com/mawww/kakoune/wiki/Kak-daemon-helper-:-1-session-per-project
 	socket_file=$(kak -l | grep $name)
 	if [[ $socket_file == "" ]]; then
-    	setsid kak -d -s $name &
+    	kak -d -s $name &
     	sleep 0.1
 	fi
 
