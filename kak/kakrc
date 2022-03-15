@@ -45,8 +45,8 @@ def ide %{
     # set global docsclient docs
 }
 
-# map global user b ':terminal kak -c %val{session}<ret>' -docstring 'split buffer into new terminal'
-# map global user t ':terminal zsh<ret>' -docstring 'open new terminal at current location'
+map global user b ':terminal kak -c %val{session}<ret>' -docstring 'split buffer into new terminal'
+map global user t ':terminal %val{shell}<ret>' -docstring 'open new terminal at current location'
 map global user c ':comment-line<ret>' -docstring 'comment marked lines'
 map global user e ':make-next-error<ret>' -docstring 'goto next make error'
 
