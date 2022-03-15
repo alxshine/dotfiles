@@ -35,6 +35,7 @@ alias pipdeps='pip install -U neovim pdbpp ipython'
 alias sr='streamlit run'
 alias zsrc='source ~/.zshrc'
 alias dup='konsole >/dev/null 2>&1 &; disown %1'
+alias cr='cd $(project_root)'
 
 # scrum
 alias scrum="Rscript -e \"writeLines(paste(c('Rainer', sample(c('Michael', 'Martin', 'Judith', 'Jeremie', 'Manuel', 'Patrik', 'Alex', 'Daniel', 'Max', 'Jenny', 'Paulina', 'Svetlana', 'Gloria', 'Nora', 'Matthias')), 'and guests'), collapse=', '))\""
