@@ -86,6 +86,7 @@ kc() {
 	if [[ $socket_file == "" ]]; then
     	kak -d -s $name &
     	sleep 0.1
+    	disown
 	fi
 
 	kak -c $name $@
