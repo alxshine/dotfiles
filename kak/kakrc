@@ -48,4 +48,4 @@ source "%val{config}/formatters.kak"
 # snippets + config
 source "%val{config}/occivink-snippets.kak"
 source "%val{config}/occivink-snippets-directory.kak"
-map global insert <c-k> '<a-;>:snippets-expand-trigger<ret>'
+map global insert <c-k> '<a-;>:snippets-select-next-placeholders<ret>'
