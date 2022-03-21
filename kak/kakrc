@@ -2,19 +2,6 @@ add-highlighter global/ number-lines
 add-highlighter global/ show-matching
 # add-highlighter global/ show-whitespaces
 add-highlighter global/ wrap
-
-# colorscheme gruvbox-dark
-
-
-#### Plugins #####
-# evaluate-commands "%sh{[ -d $kak_config/plugins ] || git clone https://github.com/andreyorst/plug.kak.git $kak_config/plugins/plug.kak}"
-# source "%val{config}/plugins/plug.kak/rc/plug.kak"
-# plug "andreyorst/smarttab.kak" defer smarttab %{
-    # set-option global softtabstop 4
-# } config %{
-    # hook global WinSetOption filetype=(python|c|cpp|rust|markdown|kak|lisp|sh) expandtab
-    # # hook global WinSetOption expandtab
-# }
 set-option global tabstop 4
 
 # add C highlighting to ino files
@@ -55,23 +42,10 @@ map global normal <F7> :make<ret>
 map global normal <F6> :format<ret>
 map global normal <a-s-c> %{<a-|>xclip -i -selection 'clipboard'<ret>}
 
-# Python
-hook global BufSetOption filetype=python %{
-	set-option buffer formatcmd 'black -'
-}
+# formatters
+source "%val{config}/formatters.kak"
 
-# JSON
-hook global BufSetOption filetype=json %{
-    set-option buffer formatcmd 'jq'
-
-}
-
-# LaTeX
-hook global BufSetOption filetype=latex %{
-    set-option buffer formatcmd 'latexindent'
-}
-
-# yaml
-hook global BufSetOption filetype=yaml %{
-    set-option buffer formatcmd 'yq -y . -'
-}
+# snippets + config
+source "%val{config}/occivink-snippets.kak"
+source "%val{config}/occivink-snippets-directory.kak"
+map global insert <c-k> '<a-;>:snippets-expand-trigger<ret>'
