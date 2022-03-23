@@ -20,7 +20,6 @@ alias dir='ls -laH'
 
 #programming stuff
 alias hl='highlight -O ansi'
-alias ssh='ssh -A'
 alias symsearch='nm -o --defined-only --demangle `find -name "**.so" -o -name "**.a" -o -name "**.o"` | fzf'
 alias gdb='gdb -q'
 alias gdd='gdb -q -x ~/.config/gdb/dashboard'
@@ -36,6 +35,7 @@ alias sr='streamlit run'
 alias zsrc='source ~/.zshrc'
 alias dup='konsole >/dev/null 2>&1 &; disown %1'
 alias cr='cd $(project_root)'
+alias pvc='latexmk --pvc'
 
 # scrum
 alias scrum="Rscript -e \"writeLines(paste(c('Rainer', sample(c('Michael', 'Martin', 'Judith', 'Jeremie', 'Manuel', 'Patrik', 'Alex', 'Daniel', 'Max', 'Jenny', 'Paulina', 'Svetlana', 'Gloria', 'Nora', 'Matthias')), 'and guests'), collapse=', '))\""
