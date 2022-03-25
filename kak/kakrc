@@ -2,7 +2,7 @@ add-highlighter global/ number-lines
 add-highlighter global/ show-matching
 # add-highlighter global/ show-whitespaces
 add-highlighter global/ wrap
-set-option global tabstop 4
+set-option global tabstop 2
 
 # add C highlighting to ino files
 hook global BufCreate .*\.ino %{
