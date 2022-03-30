@@ -44,7 +44,7 @@ map global normal <F6> :format<ret>
 map global normal <a-s-c> %{<a-|>xclip -i -selection 'clipboard'<ret>}
 
 # formatters
-source "%val{config}/formatters.kak"
+source "%val{config}/languages.kak"
 
 # snippets + config
 source "%val{config}/occivink-snippets.kak"

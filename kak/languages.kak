@@ -1,6 +1,8 @@
 # Python
 hook global BufSetOption filetype=python %{
   set-option buffer formatcmd 'black -'
+  set-option buffer tabstop 4
+  set-option buffer indentwidth 4
 }
 
 # JSON
