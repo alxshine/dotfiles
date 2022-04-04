@@ -10,6 +10,7 @@ alias gst='git status'
 alias gc='git commit'
 alias gp='git push'
 alias gl='git pull'
+alias gtl='git describe --tags $(git rev-list --tags --max-count=1)' # get latest git tag
 
 #ls stuff
 alias ls='ls --color=auto'
@@ -38,7 +39,7 @@ alias cr='cd $(project_root)'
 alias pvc='latexmk --pvc'
 
 # scrum
-alias scrum="Rscript -e \"writeLines(paste(c('Rainer', sample(c('Michael', 'Martin', 'Judith', 'Jeremie', 'Manuel', 'Patrik', 'Alex', 'Daniel', 'Max', 'Jenny', 'Paulina', 'Svetlana', 'Gloria', 'Nora', 'Matthias')), 'and guests'), collapse=', '))\""
+alias scrum="Rscript -e \"writeLines(paste(c('Rainer', sample(c('Michael', 'Martin', 'Judith', 'Jeremie', 'Manuel', 'Patrik', 'Alex', 'Daniel', 'Max', 'Jenny', 'Paulina', 'Svetlana', 'Gloria', 'Nora')), 'and guests'), collapse=', '))\""
 
 
 # wake on lan
