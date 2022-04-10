@@ -28,7 +28,7 @@ bindkey '^[[1;5C' emacs-forward-word
 # The following lines were added by compinstall
 zstyle :compinstall filename '~/config/zsh/zshrc'
 
-autoload -Uz compinit
+autoload -Uz compinit zmv
 compinit
 # End of lines added by compinstall
 
