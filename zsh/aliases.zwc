@@ -11,6 +11,7 @@ alias gc='git commit'
 alias gp='git push'
 alias gl='git pull'
 alias gtl='git describe --tags $(git rev-list --tags --max-count=1)' # get latest git tag
+alias gpublish='git push --set-upstream origin $(git rev-parse --abbrev-ref HEAD)'
 
 #ls stuff
 alias ls='ls --color=auto'
