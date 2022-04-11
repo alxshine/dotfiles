@@ -17,10 +17,10 @@ hook global BufSetOption filetype=latex %{
 
 # yaml
 hook global BufSetOption filetype=yaml %{
-set-option buffer formatcmd 'yq -y . -'
+  set-option buffer formatcmd 'yq -y . -'
 }
 
 # C/C++
-hook global BufSetOption filetype=c|cpp %{
-set-option buffer formatcmd 'clang-format -'
+hook global BufSetOption filetype=(c|cpp) %{
+  set-option buffer formatcmd 'clang-format -'
 }
