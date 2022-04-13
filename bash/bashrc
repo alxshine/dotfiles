@@ -13,16 +13,6 @@ if [ -f $XDG_CONFIG_HOME/bash/functions ]; then
   . $XDG_CONFIG_HOME/bash/functions
 fi
 
-# Base16 Shell
-BASE16_SHELL="$XDG_CONFIG_HOME/base16-shell/"
-if [[ ! -s "$BASE16_SHELL/profile_helper.sh" ]]; then
-  echo "setting up base16-shell"
-  git clone https://github.com/chriskempson/base16-shell.git $XDG_CONFIG_HOME/base16-shell
-fi
-[ -n "$PS1" ] && \
-  [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
-    eval "$("$BASE16_SHELL/profile_helper.sh")"
-
 # configure rust if available
 CARGO_ENV=$HOME/.cargo/env
 if [[ -f $CARGO_ENV ]]

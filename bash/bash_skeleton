@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -119,7 +121,6 @@ export XDG_CONFIG_HOME=$HOME/.config
 source $XDG_CONFIG_HOME/bash/bashrc
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
-base16_gruvbox-dark-soft
 
 export NVM_DIR="$HOME/.config/nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
