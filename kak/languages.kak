@@ -21,6 +21,6 @@ hook global BufSetOption filetype=yaml %{
 }
 
 # C/C++
-hook global BufSetOption filetype=(c|cpp) %{
+hook global BufSetOption filetype=(c|cpp|h) %{
   set-option buffer formatcmd 'clang-format -'
 }
