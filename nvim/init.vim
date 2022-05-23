@@ -61,6 +61,7 @@ let mapleader =  " "
 
 " Nerdcommenter
 let g:NERDSpaceDelims = 1
+let g:NERDCreateDefaultMappings = 1
 
 " Use deoplete.
 let g:deoplete#enable_at_startup = 1
