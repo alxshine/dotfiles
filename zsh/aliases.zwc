@@ -38,7 +38,6 @@ alias zsrc='source ~/.zshrc'
 alias dup='konsole >/dev/null 2>&1 &; disown %1'
 alias cr='cd $(project_root)'
 alias pvc='latexmk --pvc'
-alias spawn='kitty . >/dev/null 2>/dev/null &; disown'
 alias gdt="godot -e . >/dev/null 2>&1 &; disown; code ."
 
 # scrum

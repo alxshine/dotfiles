@@ -130,3 +130,6 @@ zp() {
     fi
 }
 
+spawn() {
+    $* >/dev/null 2>/dev/null &; disown
+}
