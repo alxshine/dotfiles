@@ -42,7 +42,7 @@ alias spawn='kitty . >/dev/null 2>/dev/null &; disown'
 alias gdt="godot -e . >/dev/null 2>&1 &; disown; code ."
 
 # scrum
-alias scrum="Rscript -e \"writeLines(paste(c('Rainer', sample(c('Michael', 'Martin', 'Judith', 'Jeremie', 'Manuel', 'Patrik', 'Alex', 'Daniel', 'Max', 'Jenny', 'Paulina', 'Svetlana', 'Gloria', 'Nora')), 'and guests'), collapse=', '))\""
+alias scrum="Rscript -e \"writeLines(paste(c('Rainer', sample(c('Michael', 'Martin', 'Judith', 'Jeremie', 'Manuel', 'Alex', 'Max', 'Jenny', 'Paulina', 'Svetlana', 'Gloria', 'Nora')), 'and guests'), collapse=', '))\""
 
 
 # wake on lan
