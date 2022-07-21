@@ -82,7 +82,7 @@ kc() {
 
     # the following is based on
     # https://github.com/mawww/kakoune/wiki/Kak-daemon-helper-:-1-session-per-project
-	socket_file=$(kak -l | grep $name)
+	socket_file=$(kak -l | grep "\b$name\b")
 	if [[ $socket_file == "" ]]; then
     	kak -d -s $name &
     	sleep 0.1
