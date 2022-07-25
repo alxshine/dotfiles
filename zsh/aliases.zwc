@@ -41,7 +41,7 @@ alias pvc='latexmk --pvc'
 alias gdt="godot -e . >/dev/null 2>&1 &; disown; code ."
 
 # scrum
-alias scrum="Rscript -e \"writeLines(paste(c('Rainer', sample(c('Michael', 'Martin', 'Judith', 'Jeremie', 'Manuel', 'Alex', 'Max', 'Jenny', 'Paulina', 'Svetlana', 'Gloria', 'Nora')), 'and guests'), collapse=', '))\""
+alias scrum="Rscript -e \"writeLines(paste(c('Rainer', sample(c('Michael', 'Martin', 'Judith', 'Manuel', 'Alex', 'Max', 'Jenny', 'Paulina', 'Svetlana', 'Gloria', 'Nora', 'Leonid', 'Lukas', 'Thomas')), 'and guests'), collapse=', '))\""
 
 
 # wake on lan
