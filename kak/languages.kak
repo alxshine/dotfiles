@@ -11,7 +11,7 @@ hook global BufSetOption filetype=json %{
 }
 
 # LaTeX
-hook global BufSetOption filetype=latex %{
+hook global BufCreate .*\.(tex|bib) %{
   set-option buffer formatcmd 'latexindent'
 }
 

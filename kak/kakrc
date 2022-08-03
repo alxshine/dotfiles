@@ -33,10 +33,23 @@ def ide %{
     # set global docsclient docs
 }
 
+# surround
+def -params 2 surround %{
+  execute-keys i %arg{1} <esc> a %arg{2} <esc>
+}
+declare-user-mode surround
+map global surround p ':surround ( ) <ret>' -docstring '(Parenthesis)'
+map global surround b ':surround [ ] <ret>' -docstring '[Brackets]'
+map global surround c ':surround { } <ret>' -docstring '{Curly braces}'
+map global surround \" ':surround \" \" <ret>' -docstring '"quotes"'
+map global surround \' ":surround \' \' <ret>" -docstring "'apostrophes'"
+
 map global user b ':terminal kak -c %val{session}<ret>' -docstring 'split buffer into new terminal'
 map global user t ':terminal %val{shell}<ret>' -docstring 'open new terminal at current location'
 map global user c ':comment-line<ret>' -docstring 'comment marked lines'
 map global user e ':make-next-error<ret>' -docstring 'goto next make error'
+map global user i ':ide<ret>' -docstring 'enter IDE mode'
+map global user s ':enter-user-mode surround<ret>' -docstring 'surround mode'
 
 # binds
 map global normal <F7> :make<ret>
@@ -50,3 +63,4 @@ source "%val{config}/languages.kak"
 source "%val{config}/occivink-snippets.kak"
 source "%val{config}/occivink-snippets-directory.kak"
 map global insert <c-k> '<a-;>:snippets-select-next-placeholders<ret>'
+
