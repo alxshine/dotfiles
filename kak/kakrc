@@ -50,11 +50,12 @@ map global user c ':comment-line<ret>' -docstring 'comment marked lines'
 map global user e ':make-next-error<ret>' -docstring 'goto next make error'
 map global user i ':ide<ret>' -docstring 'enter IDE mode'
 map global user s ':enter-user-mode surround<ret>' -docstring 'surround mode'
+map global user r %{<a-|> kitty @ send-text --match recent:1 --stdin<ret>} -docstring 'send to last window'
 
 # binds
 map global normal <F7> :make<ret>
 map global normal <F6> :format<ret>
-map global normal <a-s-c> %{<a-|>xclip -i -selection 'clipboard'<ret>}
+map global normal <a-s-c> %{<a-|>xsel -b<ret>}
 
 # formatters
 source "%val{config}/languages.kak"
