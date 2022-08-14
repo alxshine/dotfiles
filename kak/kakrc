@@ -33,6 +33,16 @@ def ide %{
     # set global docsclient docs
 }
 
+def send-repl %{
+  nop %sh{
+    kitty @ send-text --match recent:1 '%cpaste\n'
+  }
+  execute-keys <a-|> 'kitty @ send-text --match recent:1 --stdin' <ret>
+  nop %sh{
+    kitty @ send-text --match recent:1 '\n--\n'
+  }
+}
+
 # surround
 def -params 2 surround %{
   execute-keys i %arg{1} <esc> a %arg{2} <esc>
@@ -50,7 +60,7 @@ map global user c ':comment-line<ret>' -docstring 'comment marked lines'
 map global user e ':make-next-error<ret>' -docstring 'goto next make error'
 map global user i ':ide<ret>' -docstring 'enter IDE mode'
 map global user s ':enter-user-mode surround<ret>' -docstring 'surround mode'
-map global user r %{<a-|> kitty @ send-text --match recent:1 --stdin<ret>} -docstring 'send to last window'
+map global user r ':send-repl<ret>' -docstring 'send to last window'
 
 # binds
 map global normal <F7> :make<ret>
