@@ -34,15 +34,18 @@ def ide %{
 }
 
 def send-repl %{
+  execute-keys <a-|> 'kitty @ send-text --match recent:1 --stdin' <ret>
+}
+
+def send-ipython %{
   nop %sh{
     kitty @ send-text --match recent:1 '%cpaste\n'
   }
-  execute-keys <a-|> 'kitty @ send-text --match recent:1 --stdin' <ret>
+  send-repl
   nop %sh{
     kitty @ send-text --match recent:1 '\n--\n'
   }
 }
-
 # surround
 def -params 2 surround %{
   execute-keys i %arg{1} <esc> a %arg{2} <esc>
@@ -61,6 +64,7 @@ map global user e ':make-next-error<ret>' -docstring 'goto next make error'
 map global user i ':ide<ret>' -docstring 'enter IDE mode'
 map global user s ':enter-user-mode surround<ret>' -docstring 'surround mode'
 map global user r ':send-repl<ret>' -docstring 'send to last window'
+map global user p ':send-ipython<ret>' -docstring 'send to last window with ipython escape'
 
 # binds
 map global normal <F7> :make<ret>
