@@ -32,8 +32,8 @@ autoload -Uz compinit zmv
 compinit
 # End of lines added by compinstall
 
+[[ ! -f ~/.config/zsh/powerlevel10k/powerlevel10k.zsh-theme ]] || source ~/.config/zsh/powerlevel10k/powerlevel10k.zsh-theme
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 
 try_source () {
     [[ ! -f "$1" ]] || source "$1"
