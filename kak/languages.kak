@@ -24,3 +24,12 @@ hook global BufSetOption filetype=yaml %{
 hook global BufSetOption filetype=(c|cpp|h) %{
   set-option buffer formatcmd 'clang-format -'
 }
+
+# Godot
+hook global BufCreate .*\.gd %{
+  map buffer insert <tab> '<a-;><a-gt>'
+  map buffer insert <s-tab> '<a-;><a-lt>'
+  set-option buffer indentwidth 0
+  set-option buffer tabstop 2
+}
+
