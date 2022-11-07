@@ -1,3 +1,4 @@
+colorscheme gruvbox-dark
 add-highlighter global/ number-lines
 add-highlighter global/ show-matching
 # add-highlighter global/ show-whitespaces
