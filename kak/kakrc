@@ -69,7 +69,7 @@ map global user p ':send-ipython<ret>' -docstring 'send to last window with ipyt
 # binds
 map global normal <F7> :make<ret>
 map global normal <F6> :format<ret>
-map global normal <a-s-c> %{<a-|>xsel -b<ret>}
+map global normal <a-s-c> %{<a-|>kitty +kitten clipboard<ret>}
 
 # formatters
 source "%val{config}/languages.kak"
