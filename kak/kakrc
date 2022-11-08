@@ -59,7 +59,7 @@ map global surround \" ':surround \" \" <ret>' -docstring '"quotes"'
 map global surround \' ":surround \' \' <ret>" -docstring "'apostrophes'"
 
 map global user b ':terminal kak -c %val{session}<ret>' -docstring 'split buffer into new terminal'
-map global user t ':terminal %val{shell}<ret>' -docstring 'open new terminal at current location'
+map global user t ':terminal %sh{$SHELL}<ret>' -docstring 'open new terminal at current location'
 map global user c ':comment-line<ret>' -docstring 'comment marked lines'
 map global user e ':make-next-error<ret>' -docstring 'goto next make error'
 map global user i ':ide<ret>' -docstring 'enter IDE mode'
