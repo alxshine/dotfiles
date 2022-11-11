@@ -76,6 +76,7 @@ map global normal <a-s-c> %{<a-|>kitty +kitten clipboard<ret>}
 source "%val{config}/languages.kak"
 
 # snippets + config
+# TODO: init if not initialized
 source "%val{config}/kakoune-snippets/snippets.kak"
 source "%val{config}/kakoune-snippets/snippets-directory.kak"
 map global insert <c-k> '<a-;>:snippets-select-next-placeholders<ret>'
