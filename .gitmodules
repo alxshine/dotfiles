@@ -4,3 +4,6 @@
 [submodule "kitty/kitty-gruvbox"]
 	path = kitty/kitty-gruvbox
 	url = https://github.com/ghsable/kitty-gruvbox.git
+[submodule "kak/kakoune-snippets"]
+	path = kak/kakoune-snippets
+	url = https://github.com/occivink/kakoune-snippets.git
