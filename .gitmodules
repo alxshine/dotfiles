@@ -1,9 +1,9 @@
 [submodule "zsh/powerlevel10k"]
 	path = zsh/powerlevel10k
 	url = https://github.com/romkatv/powerlevel10k.git
-[submodule "kitty/kitty-gruvbox"]
-	path = kitty/kitty-gruvbox
-	url = https://github.com/ghsable/kitty-gruvbox.git
 [submodule "kak/kakoune-snippets"]
 	path = kak/kakoune-snippets
 	url = https://github.com/occivink/kakoune-snippets.git
+[submodule "kitty/kitty-themes"]
+	path = kitty/kitty-themes
+	url = https://github.com/dexpota/kitty-themes.git
