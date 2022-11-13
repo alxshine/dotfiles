@@ -33,3 +33,7 @@ hook global BufCreate .*\.gd %{
   set-option buffer tabstop 2
 }
 
+# Julia
+hook global BufCreate filetype=julia %{
+  set-option buffer tabstop 4
+}
