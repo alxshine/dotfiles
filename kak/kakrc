@@ -1,4 +1,3 @@
-# colorscheme gruvbox-dark
 add-highlighter global/ number-lines
 add-highlighter global/ show-matching
 # add-highlighter global/ show-whitespaces
@@ -81,5 +80,5 @@ source "%val{config}/kakoune-snippets/snippets.kak"
 source "%val{config}/kakoune-snippets/snippets-directory.kak"
 map global insert <c-k> '<a-;>:snippets-select-next-placeholders<ret>'
 
-nop %sh{ test -e $kak_config/local.kak || test -e $kak_config/local.kak } # create local if we don't have one
+nop %sh{ test -e $kak_config/local.kak || touch $kak_config/local.kak } # create local if we don't have one
 source "%val{config}/local.kak" # saves us a check in this line
