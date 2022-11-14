@@ -7,3 +7,6 @@
 [submodule "kitty/kitty-themes"]
 	path = kitty/kitty-themes
 	url = https://github.com/dexpota/kitty-themes.git
+[submodule "kitty/kitty-gruvbox"]
+	path = kitty/kitty-gruvbox
+	url = https://github.com/ghsable/kitty-gruvbox.git
