@@ -1,0 +1,86 @@
+{
+    "workbench.colorTheme": "Everforest Dark",
+    "terminal.integrated.commandsToSkipShell": [
+        "language-julia.interrupt"
+    ],
+    "julia.symbolCacheDownload": true,
+    "julia.enableTelemetry": true,
+    "editor.fontFamily": "'Source Code Pro','Droid Sans Mono', 'monospace', monospace",
+    "editor.fontSize": 16,
+    "terminal.integrated.fontSize": 15,
+    "security.workspace.trust.untrustedFiles": "open",
+    "terminal.integrated.sendKeybindingsToShell": true,
+    "terminal.integrated.allowChords": false,
+    "dance.modes": {
+        "": {
+            "hiddenSelectionsIndicatorsDecoration": {
+                "after": {
+                    "color": "$list.warningForeground"
+                },
+                "backgroundColor": "$inputValidation.warningBackground",
+                "borderColor": "$inputValidation.warningBorder",
+                "borderStyle": "solid",
+                "borderWidth": "1px",
+                "isWholeLine": true
+            }
+        },
+        "input": {
+            "cursorStyle": "underline-thin"
+        },
+        "insert": {
+            "onLeaveMode": [
+                [
+                    ".selections.save",
+                    {
+                        "register": " insert"
+                    }
+                ]
+            ]
+        },
+        "normal": {
+            "lineNumbers": "on",
+            "decorations": {
+                "applyTo": "main",
+                "backgroundColor": "$editor.hoverHighlightBackground",
+                "isWholeLine": true
+            },
+            "onEnterMode": [
+                [
+                    ".selections.restore",
+                    {
+                        "register": " ^",
+                        "try": true
+                    }
+                ]
+            ],
+            "onLeaveMode": [
+                [
+                    ".selections.save",
+                    {
+                        "register": " ^",
+                        "style": {
+                            "borderColor": "$editor.selectionBackground",
+                            "borderStyle": "solid",
+                            "borderWidth": "2px",
+                            "borderRadius": "1px"
+                        },
+                        "until": [
+                            [
+                                "mode-did-change",
+                                {
+                                    "include": "normal"
+                                }
+                            ],
+                            [
+                                "selections-did-change"
+                            ]
+                        ]
+                    }
+                ]
+            ]
+        }
+    },
+    "gitlens.currentLine.enabled": false,
+    "gitlens.hovers.currentLine.over": "line",
+    "gitlens.codeLens.enabled": false
+}
