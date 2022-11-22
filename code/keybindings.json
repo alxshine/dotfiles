@@ -3,5 +3,9 @@
     {
         "key": "ctrl+shift+g p",
         "command": "git.push"
+    },
+    {
+        "key": "ctrl+shift+g l",
+        "command": "git.pull"
     }
 ]
