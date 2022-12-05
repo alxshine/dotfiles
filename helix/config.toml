@@ -1,4 +1,10 @@
-theme = 'gruvbox'
+theme="gruvbox"
 
-[keys.insert]
-j = { k = "normal_mode" } # Maps `,.` to exit insert mode
+[editor]
+idle-timeout = 200
+
+[keys.normal]
+C-r = ":pipe-to kitty @ send-text --match recent:1 --stdin"
+
+[keys.select]
+C-r = ":pipe-to kitty @ send-text --match recent:1 --stdin"
