@@ -15,5 +15,7 @@
     "gitlens.hovers.currentLine.over": "line",
     "gitlens.codeLens.enabled": false,
     "git.autofetch": true,
-    "files.simpleDialog.enable": true
+    "files.simpleDialog.enable": true,
+    "window.enableMenuBarMnemonics": false,
+    "window.menuBarVisibility": "compact"
 }
