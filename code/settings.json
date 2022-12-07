@@ -1,5 +1,5 @@
 {
-    "workbench.colorTheme": "Everforest Dark",
+    "workbench.colorTheme": "Gruvbox Minor Dark Medium",
     "terminal.integrated.commandsToSkipShell": [
         "language-julia.interrupt"
     ],
@@ -11,77 +11,9 @@
     "security.workspace.trust.untrustedFiles": "open",
     "terminal.integrated.sendKeybindingsToShell": true,
     "terminal.integrated.allowChords": false,
-    "dance.modes": {
-        "": {
-            "hiddenSelectionsIndicatorsDecoration": {
-                "after": {
-                    "color": "$list.warningForeground"
-                },
-                "backgroundColor": "$inputValidation.warningBackground",
-                "borderColor": "$inputValidation.warningBorder",
-                "borderStyle": "solid",
-                "borderWidth": "1px",
-                "isWholeLine": true
-            }
-        },
-        "input": {
-            "cursorStyle": "underline-thin"
-        },
-        "insert": {
-            "onLeaveMode": [
-                [
-                    ".selections.save",
-                    {
-                        "register": " insert"
-                    }
-                ]
-            ]
-        },
-        "normal": {
-            "lineNumbers": "on",
-            "decorations": {
-                "applyTo": "main",
-                "backgroundColor": "$editor.hoverHighlightBackground",
-                "isWholeLine": true
-            },
-            "onEnterMode": [
-                [
-                    ".selections.restore",
-                    {
-                        "register": " ^",
-                        "try": true
-                    }
-                ]
-            ],
-            "onLeaveMode": [
-                [
-                    ".selections.save",
-                    {
-                        "register": " ^",
-                        "style": {
-                            "borderColor": "$editor.selectionBackground",
-                            "borderStyle": "solid",
-                            "borderWidth": "2px",
-                            "borderRadius": "1px"
-                        },
-                        "until": [
-                            [
-                                "mode-did-change",
-                                {
-                                    "include": "normal"
-                                }
-                            ],
-                            [
-                                "selections-did-change"
-                            ]
-                        ]
-                    }
-                ]
-            ]
-        }
-    },
     "gitlens.currentLine.enabled": false,
     "gitlens.hovers.currentLine.over": "line",
     "gitlens.codeLens.enabled": false,
-    "git.autofetch": true
+    "git.autofetch": true,
+    "files.simpleDialog.enable": true
 }
