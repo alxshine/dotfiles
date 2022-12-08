@@ -23,4 +23,5 @@
     "RainbowBrackets.depreciation-notice": false,
     "explorer.confirmDelete": false,
     "latex-workshop.latex.autoBuild.run": "never",
+    "latex-workshop.latex.outDir": "%DIR%/_build",
 }
