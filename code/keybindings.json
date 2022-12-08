@@ -7,5 +7,9 @@
     {
         "key": "ctrl+shift+g l",
         "command": "git.pull"
+    },
+    {
+        "key": "ctrl+shift+g f",
+        "command": "git.fetch"
     }
 ]
