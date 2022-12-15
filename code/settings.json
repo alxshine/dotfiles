@@ -26,6 +26,7 @@
     "latex-workshop.latex.outDir": "%DIR%/_build",
     "git.confirmSync": false,
     "dance.modes": {
+    
         "": {
             "hiddenSelectionsIndicatorsDecoration": {
                 "after": {
@@ -94,4 +95,14 @@
             ]
         }
     },
+    "dance.defaultMode": "insert",
+    "godot.csharp.executablePath": "/home/alex/.local/bin/godot",
+    "[csharp]": {
+        "editor.defaultFormatter": "csharpier.csharpier-vscode",
+        "editor.formatOnSave": true
+    },
+    "editor.formatOnSaveMode": "modificationsIfAvailable",
+    "diffEditor.ignoreTrimWhitespace": false,
+    "workbench.editor.wrapTabs": true,
+    "terminal.external.linuxExec": "kitty",
 }
