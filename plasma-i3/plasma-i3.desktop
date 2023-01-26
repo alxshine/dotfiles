@@ -1,5 +1,0 @@
-[Desktop Entry]
-Type=XSession
-Exec=/usr/local/bin/plasma-i3.sh
-TryExec=/usr/local/bin/plasma-i3.sh
-Name=Plasma (i3)
