@@ -11,5 +11,53 @@
     {
         "key": "ctrl+shift+g f",
         "command": "git.fetch"
+    },
+    {
+        "key": "alt+c",
+        "command": "-workbench.action.terminal.toggleFindCaseSensitive",
+        "when": "terminalFindFocused && terminalHasBeenCreated || terminalFindFocused && terminalProcessSupported || terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
+    },
+    {
+        "key": "ctrl+shift+g g",
+        "command": "workbench.scm.focus"
+    },
+    {
+        "key": "ctrl+k space",
+        "command": "editor.action.toggleColumnSelection"
+    },
+    {
+        "key": "ctrl+shift+g v",
+        "command": "git-graph.view"
+    },
+    {
+        "key": "ctrl+k backspace",
+        "command": "workbench.action.closeSidebar"
+    },
+    {
+        "key": "ctrl+k ctrl+r",
+        "command": "git.revertSelectedRanges"
+    },
+    {
+        "key": "ctrl+k ctrl+r",
+        "command": "-git.revertSelectedRanges",
+        "when": "isInDiffEditor"
+    },
+    {
+        "key": "ctrl+k ctrl+alt+s",
+        "command": "git.stageSelectedRanges"
+    },
+    {
+        "key": "ctrl+k ctrl+alt+s",
+        "command": "-git.stageSelectedRanges",
+        "when": "isInDiffEditor"
+    },
+    {
+        "key": "ctrl+k ctrl+n",
+        "command": "git.unstageSelectedRanges"
+    },
+    {
+        "key": "ctrl+k ctrl+n",
+        "command": "-git.unstageSelectedRanges",
+        "when": "isInDiffEditor"
     }
 ]
