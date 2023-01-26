@@ -30,6 +30,7 @@ include parts/gaps.conf
 
 # visuals (colors, bar, wallpaper, etc.)
 include parts/visuals.conf
+include colors/gruvbox.conf
 
 # custom, not checked in stuff
 include parts/custom.conf
