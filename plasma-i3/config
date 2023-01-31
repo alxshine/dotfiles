@@ -25,6 +25,9 @@ include parts/launchers.conf
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 # exec --no-startup-id nm-applet
 
+# custom, not checked in stuff
+include parts/custom.conf
+
 # gaps
 include parts/gaps.conf
 
@@ -32,5 +35,3 @@ include parts/gaps.conf
 include parts/visuals.conf
 include colors/gruvbox.conf
 
-# custom, not checked in stuff
-include parts/custom.conf
