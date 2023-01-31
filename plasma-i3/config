@@ -30,3 +30,4 @@ include parts/gaps.conf
 include parts/visuals.conf
 include colors/gruvbox.conf
 
+include parts/autostart.conf
