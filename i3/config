@@ -12,6 +12,11 @@ set $down n
 set $right s
 set $mod Mod4
 
+# custom, not checked in stuff, may contain config for later stuff
+include parts/custom.conf
+
+include parts/autostart.conf
+
 # basic WM bindings
 include parts/movement.conf
 include parts/resize.conf
@@ -31,6 +36,3 @@ include parts/gaps.conf
 # visuals (colors, bar, wallpaper, etc.)
 include parts/visuals.conf
 include colors/gruvbox.conf
-
-# custom, not checked in stuff
-include parts/custom.conf
