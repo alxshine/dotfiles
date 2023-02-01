@@ -21,8 +21,6 @@ include parts/autostart.conf
 include parts/movement.conf
 include parts/resize.conf
 
-# tool definitions (not checked in)
-include parts/tools.conf
 # actual launcher bindings
 include parts/launchers.conf
 
