@@ -112,4 +112,5 @@
         "editor.defaultFormatter": "yzhang.markdown-all-in-one"
     },
     "latex-workshop.bind.altKeymap.enabled": true,
+    "git.autofetch": true,
 }
