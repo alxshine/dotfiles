@@ -113,4 +113,5 @@
     },
     "latex-workshop.bind.altKeymap.enabled": true,
     "git.autofetch": true,
+    "git.openRepositoryInParentFolders": "always",
 }
