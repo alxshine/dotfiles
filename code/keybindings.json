@@ -59,5 +59,15 @@
         "key": "ctrl+k ctrl+n",
         "command": "-git.unstageSelectedRanges",
         "when": "isInDiffEditor"
+    },
+    {
+        "key": "shift+alt+p",
+        "command": "chat.action.askQuickQuestion",
+        "when": "config.chat.experimental.quickQuestion.enable && hasChatProvider"
+    },
+    {
+        "key": "ctrl+shift+i",
+        "command": "-chat.action.askQuickQuestion",
+        "when": "config.chat.experimental.quickQuestion.enable && hasChatProvider"
     }
 ]

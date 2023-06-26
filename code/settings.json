@@ -13,7 +13,6 @@
     "terminal.integrated.allowChords": false,
     "terminal.integrated.fontSize": 15,
     "window.enableMenuBarMnemonics": false,
-    "window.menuBarVisibility": "compact",
     "RainbowBrackets.colorMode": "Independent",
     "julia.enableTelemetry": false,
     "RainbowBrackets.depreciation-notice": false,
@@ -114,4 +113,13 @@
     "latex-workshop.bind.altKeymap.enabled": true,
     "git.autofetch": true,
     "git.openRepositoryInParentFolders": "always",
+    "julia.executablePath": "/home/alex/.local/opt/julia-1.8.5/bin/julia",
+    "window.menuBarVisibility": "toggle",
+    "editor.inlineSuggest.enabled": true,
+    "git.enableSmartCommit": true,
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter"
+    },
+    "chat.experimental.quickQuestion.enable": true,
+    "jupyter.interactiveWindow.creationMode": "perFile",
 }
