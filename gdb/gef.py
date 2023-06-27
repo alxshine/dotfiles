@@ -233,6 +233,9 @@ def highlight_text(text: str) -> str:
 def gef_print(*args: str, end="\n", sep=" ", **kwargs: Any) -> None:
     """Wrapper around print(), using string buffering feature."""
     parts = [highlight_text(a) for a in args]
+    # print(f"{buffer_output()=}")
+    # print(f"{gef.ui.stream_buffer=}")
+    # print(f"{is_debug()=}")
     if buffer_output() and gef.ui.stream_buffer and not is_debug():
         gef.ui.stream_buffer.write(sep.join(parts) + end)
         return
@@ -1938,12 +1941,12 @@ class RedirectOutputContext:
         gdb.execute("set logging overwrite")
         gdb.execute(f"set logging file {self.redirection_target_file}")
         gdb.execute("set logging redirect on")
-        gdb.execute("set logging on")
+        gdb.execute("set logging enabled on")
         return
 
     def __exit__(self, *exc: Any) -> None:
         """Disable the output redirection, if any."""
-        gdb.execute("set logging off")
+        gdb.execute("set logging enabled off")
         gdb.execute("set logging redirect off")
         return
 
@@ -1953,13 +1956,13 @@ def enable_redirect_output(to_file: str = "/dev/null") -> None:
     gdb.execute("set logging overwrite")
     gdb.execute(f"set logging file {to_file}")
     gdb.execute("set logging redirect on")
-    gdb.execute("set logging on")
+    gdb.execute("set logging enabled on")
     return
 
 
 def disable_redirect_output() -> None:
     """Disable the output redirection, if any."""
-    gdb.execute("set logging off")
+    gdb.execute("set logging enabled off")
     gdb.execute("set logging redirect off")
     return
 
@@ -8700,7 +8703,7 @@ class TraceRunCommand(GenericCommand):
         loc_cur = loc_start
         frame_count_init = self.get_frames_size()
 
-        gef_print("#",
+        print("#",
                   f"# Execution tracing of {get_filepath()}",
                   f"# Start address: {format_address(loc_start)}",
                   f"# End address: {format_address(loc_end)}",
@@ -8717,11 +8720,12 @@ class TraceRunCommand(GenericCommand):
                 else:
                     gdb.execute("finish")
 
+                gdb.execute("x/i $pc")
                 loc_cur = gef.arch.pc
                 gdb.flush()
 
             except gdb.error as e:
-                gef_print("#",
+                print("#",
                           f"# Execution interrupted at address {format_address(loc_cur)}",
                           f"# Exception: {e}",
                           "#\n", sep="\n")
