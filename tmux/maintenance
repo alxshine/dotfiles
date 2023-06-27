@@ -1,5 +1,5 @@
 #!/bin/sh
 tmux new-session -d -s 'maintenance' -n 'ssh' 'ssh rechenknecht'
-tmux split-window -v 'ssh ennclave-consumer'
-tmux split-window -v 'ssh ennclave-server'
+tmux split-window -v 'ssh consumer'
+tmux split-window -v 'ssh dungeon'
 tmux -2 attach-session -t 'maintenance'

@@ -13,84 +13,13 @@
     "terminal.integrated.allowChords": false,
     "terminal.integrated.fontSize": 15,
     "window.enableMenuBarMnemonics": false,
+    "window.menuBarVisibility": "compact",
     "RainbowBrackets.colorMode": "Independent",
     "julia.enableTelemetry": false,
-    "RainbowBrackets.depreciation-notice": false,
     "explorer.confirmDelete": false,
     "latex-workshop.latex.autoBuild.run": "never",
     "latex-workshop.latex.outDir": "%DIR%/_build",
     "git.confirmSync": false,
-    "dance.modes": {
-    
-        "": {
-            "hiddenSelectionsIndicatorsDecoration": {
-                "after": {
-                    "color": "$list.warningForeground"
-                },
-                "backgroundColor": "$inputValidation.warningBackground",
-                "borderColor": "$inputValidation.warningBorder",
-                "borderStyle": "solid",
-                "borderWidth": "1px",
-                "isWholeLine": true
-            }
-        },
-        "input": {
-            "cursorStyle": "underline-thin"
-        },
-        "insert": {
-            "onLeaveMode": [
-                [
-                    ".selections.save",
-                    {
-                        "register": " insert"
-                    }
-                ]
-            ]
-        },
-        "normal": {
-            "lineNumbers": "relative",
-            "decorations": {
-                "applyTo": "main",
-                "backgroundColor": "$editor.hoverHighlightBackground",
-                "isWholeLine": false
-            },
-            "onEnterMode": [
-                [
-                    ".selections.restore",
-                    {
-                        "register": " ^",
-                        "try": true
-                    }
-                ]
-            ],
-            "onLeaveMode": [
-                [
-                    ".selections.save",
-                    {
-                        "register": " ^",
-                        "style": {
-                            "borderColor": "$editor.selectionBackground",
-                            "borderStyle": "solid",
-                            "borderWidth": "2px",
-                            "borderRadius": "1px"
-                        },
-                        "until": [
-                            [
-                                "mode-did-change",
-                                {
-                                    "include": "normal"
-                                }
-                            ],
-                            [
-                                "selections-did-change"
-                            ]
-                        ]
-                    }
-                ]
-            ]
-        }
-    },
-    "dance.defaultMode": "insert",
     "godot.csharp.executablePath": "/home/alex/.local/bin/godot",
     "[csharp]": {
         "editor.defaultFormatter": "csharpier.csharpier-vscode",
@@ -113,6 +42,31 @@
     "latex-workshop.bind.altKeymap.enabled": true,
     "git.autofetch": true,
     "git.openRepositoryInParentFolders": "always",
+    "svelte.enable-ts-plugin": true,
+    "[svelte]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "debug.allowBreakpointsEverywhere": true,
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "python.formatting.provider": "black",
+    "editor.inlineSuggest.enabled": true,
+    "github.copilot.enable": {
+        "*": true,
+        "plaintext": false,
+        "markdown": false,
+        "scminput": false
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "chat.experimental.quickQuestion.enable": true,
+    "gitlens.graph.layout": "editor",
+    "prettier.semi": false,
+    "jupyter.askForKernelRestart": false,
+    "window.zoomLevel": -1,
+    "jupyter.interactiveWindow.creationMode": "perFile",
     "julia.executablePath": "/home/alex/.local/opt/julia-1.8.5/bin/julia",
     "window.menuBarVisibility": "toggle",
     "editor.inlineSuggest.enabled": true,
