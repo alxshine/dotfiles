@@ -1,0 +1,5 @@
+set history save
+
+define gef
+	source ~/.config/gdb/gef.py
+end
