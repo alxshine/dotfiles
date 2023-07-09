@@ -1,9 +1,9 @@
 {
-    "workbench.colorTheme": "Gruvbox Minor Dark Medium",
+    "workbench.colorTheme": "Ayu Mirage",
     "terminal.integrated.commandsToSkipShell": [
         "language-julia.interrupt"
     ],
-    "editor.fontFamily": "'Source Code Pro','Droid Sans Mono', 'monospace', monospace",
+    "editor.fontFamily": "'Source Code Pro'",
     "editor.fontSize": 16,
     "files.simpleDialog.enable": true,
     "julia.focusPlotNavigator": true,
@@ -54,8 +54,8 @@
     "editor.inlineSuggest.enabled": true,
     "github.copilot.enable": {
         "*": true,
-        "plaintext": false,
-        "markdown": false,
+        "plaintext": true,
+        "markdown": true,
         "scminput": false
     },
     "[jsonc]": {
@@ -65,7 +65,6 @@
     "gitlens.graph.layout": "editor",
     "prettier.semi": false,
     "jupyter.askForKernelRestart": false,
-    "window.zoomLevel": -1,
     "jupyter.interactiveWindow.creationMode": "perFile",
     "julia.executablePath": "/home/alex/.local/opt/julia-1.8.5/bin/julia",
     "window.menuBarVisibility": "toggle",
@@ -76,4 +75,9 @@
     },
     "chat.experimental.quickQuestion.enable": true,
     "jupyter.interactiveWindow.creationMode": "perFile",
+    "window.zoomLevel": -1,
+    "cmake.configureOnOpen": false,
+    "C_Cpp.inlayHints.parameterNames.enabled": true,
+    "C_Cpp.inlayHints.autoDeclarationTypes.showOnLeft": true,
+    "C_Cpp.inactiveRegionOpacity": 0.9,
 }
