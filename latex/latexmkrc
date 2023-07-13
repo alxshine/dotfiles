@@ -1,4 +1,4 @@
 $pdf_mode = 1;
 $out_dir = './_build';
-$pdflatex = 'pdflatex -synctex=1 --interaction=nonstopmode -file-line-error';
+$pdflatex = 'pdflatex -synctex=1 -file-line-error';
 $pdf_previewer = 'zathura'
