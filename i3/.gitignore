@@ -1,3 +1,4 @@
-parts/custom.conf
+parts/custom_before.conf
+parts/custom_after.conf
 parts/launchers.conf
 parts/visuals.conf
