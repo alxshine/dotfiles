@@ -21,25 +21,25 @@ include colors/gruvbox.conf
 #
 ##########################################################
 
-exec --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=secret
-exec --no-startup-id /usr/lib/polkit-kde-authentication-agent-1
+exec --no-startup-id "/usr/bin/gnome-keyring-daemon --start --components=secret"
+exec --no-startup-id "/usr/lib/polkit-kde-authentication-agent-1"
 exec --no-startup-id "dbus-update-activation-environment --systemd DBUS_SESSION_BUS_ADDRESS DISPLAY XAUTHORITY"
-exec --no-startup-id dropbox &
-exec --no-startup-id wired &
-exec --no-startup-id picom &
-exec --no-startup-id blueman-applet &
-exec --no-startup-id nm-applet &
-exec --no-startup-id 1password &
-exec --no-startup-id playerctld &
+exec --no-startup-id "dropbox &"
+exec --no-startup-id "wired &"
+exec --no-startup-id "picom &"
+exec --no-startup-id "blueman-applet &"
+exec --no-startup-id "nm-applet &"
+exec --no-startup-id "1password &"
+exec --no-startup-id "playerctld &"
 
 exec_always --no-startup-id /home/alex/.config/polybar/launch.sh
 
-exec_always --no-startup-id flatpak run org.signal.Signal 
-exec_always --no-startup-id flatpak run im.riot.Riot 
+exec_always --no-startup-id "flatpak run org.signal.Signal"
+exec_always --no-startup-id "flatpak run im.riot.Riot"
 exec_always --no-startup-id steam
 
 exec_always --no-startup-id /home/alex/.screenlayout/triple.sh
-exec_always setxkbmap us,at -option -option grp:shifts_toggle
+exec_always "setxkbmap us,at -option -option grp:shifts_toggle"
 
 set $wallpaper feh --bg-fill ~/Pictures/wallpaper
 exec_always $wallpaper
@@ -66,14 +66,11 @@ bindsym $mod+Return exec kitty
 #
 ##########################################################
 
-bindsym $mod+Shift+p exec --no-startup-id /home/alex/.screenlayout/triple.sh
-
-
 # kill focused window
 bindsym $mod+Shift+q kill
 bindsym $mod+d exec "rofi -show drun -matching prefix"
 
-bindsym $mod+e exec kitty ranger
+bindsym $mod+e exec "kitty ranger"
 bindsym $mod+shift+e exec thunar
 
 # backlight
@@ -100,10 +97,10 @@ bindsym $mod+Shift+b exec --no-startup-id firefox --private-window
 bindsym $mod+r exec i3-nagbar -m "Resizing" -t warning; mode "resize"
 
 # suspend
-bindsym $mod+l exec slock systemctl suspend -i 
+bindsym $mod+l exec "slock systemctl suspend -i"
 
 # screenshot
-bindsym $mod+alt+s exec ksnip -r
+bindsym $mod+alt+s exec "ksnip -r"
 
 # change focus
 bindsym $mod+$left focus left
