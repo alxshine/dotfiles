@@ -38,7 +38,6 @@ exec_always --no-startup-id "flatpak run org.signal.Signal"
 exec_always --no-startup-id "flatpak run im.riot.Riot"
 exec_always --no-startup-id steam
 
-exec_always --no-startup-id /home/alex/.screenlayout/triple.sh
 # exec_always "setxkbmap us,at -option -option grp:shifts_toggle"
 
 set $wallpaper feh --bg-fill ~/Pictures/wallpaper
