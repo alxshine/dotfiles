@@ -32,6 +32,7 @@ exec --no-startup-id "nm-applet &"
 exec --no-startup-id "1password &"
 exec --no-startup-id "playerctld &"
 
+exec_always --no-startup-id ~/.screenlayout/default.sh
 exec_always --no-startup-id /home/alex/.config/polybar/launch.sh
 
 exec_always --no-startup-id "flatpak run org.signal.Signal"
@@ -96,7 +97,7 @@ bindsym $mod+Shift+b exec --no-startup-id firefox --private-window
 bindsym $mod+r exec i3-nagbar -m "Resizing" -t warning; mode "resize"
 
 # suspend
-bindsym $mod+l exec "slock systemctl suspend -i"
+# bindsym $mod+l exec "slock systemctl suspend -i"
 
 # screenshot
 bindsym $mod+alt+s exec "ksnip -r"
