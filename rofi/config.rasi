@@ -1,4 +1,3 @@
 configuration {
  font: "Source Code Pro 11";
  }
-@theme "cortex"
