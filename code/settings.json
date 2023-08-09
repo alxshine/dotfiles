@@ -75,7 +75,6 @@
     },
     "chat.experimental.quickQuestion.enable": true,
     "jupyter.interactiveWindow.creationMode": "perFile",
-    "window.zoomLevel": -1,
     "cmake.configureOnOpen": false,
     "C_Cpp.inlayHints.parameterNames.enabled": true,
     "C_Cpp.inlayHints.autoDeclarationTypes.showOnLeft": true,
