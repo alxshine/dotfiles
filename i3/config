@@ -41,8 +41,7 @@ exec_always --no-startup-id steam
 
 # exec_always "setxkbmap us,at -option -option grp:shifts_toggle"
 
-set $wallpaper feh --bg-fill ~/Pictures/wallpaper
-exec_always $wallpaper
+exec_always ~/Pictures/wallpaper
 
 ##########################################################
 #
