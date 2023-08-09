@@ -69,5 +69,9 @@
         "key": "ctrl+shift+i",
         "command": "-chat.action.askQuickQuestion",
         "when": "config.chat.experimental.quickQuestion.enable && hasChatProvider"
+    },
+    {
+        "key": "ctrl+alt+e",
+        "command": "workbench.files.action.showActiveFileInExplorer"
     }
 ]
