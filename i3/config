@@ -68,6 +68,7 @@ bindsym $mod+Return exec kitty
 # kill focused window
 bindsym $mod+Shift+q kill
 bindsym $mod+d exec "rofi -show drun -matching prefix"
+bindsym $mod+shift+d exec "rofi -show window"
 
 bindsym $mod+e exec "kitty ranger"
 bindsym $mod+shift+e exec thunar
