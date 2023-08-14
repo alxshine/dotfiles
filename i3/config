@@ -68,7 +68,7 @@ bindsym $mod+Return exec kitty
 # kill focused window
 bindsym $mod+Shift+q kill
 bindsym $mod+d exec "rofi -show drun -matching prefix"
-bindsym $mod+shift+d exec "rofi -show window"
+bindsym $mod+Shift+d exec "rofi -show window"
 
 bindsym $mod+e exec "kitty ranger"
 bindsym $mod+shift+e exec thunar
@@ -170,6 +170,18 @@ bindsym $mod+7 workspace number $ws7
 bindsym $mod+8 workspace number $ws8
 bindsym $mod+9 workspace number $ws9
 bindsym $mod+0 workspace number $ws10
+
+# and again for numpad
+bindsym $mod+mod2+KP_1 workspace $ws1
+bindsym $mod+mod2+KP_2 workspace $ws2
+bindsym $mod+mod2+KP_3 workspace $ws3
+bindsym $mod+mod2+KP_4 workspace $ws4
+bindsym $mod+mod2+KP_5 workspace $ws5
+bindsym $mod+mod2+KP_6 workspace $ws6
+bindsym $mod+mod2+KP_7 workspace $ws7
+bindsym $mod+mod2+KP_8 workspace $ws8
+bindsym $mod+mod2+KP_9 workspace $ws9
+bindsym $mod+mod2+KP_0 workspace $ws10
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace number $ws1
