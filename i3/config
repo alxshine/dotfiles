@@ -31,6 +31,7 @@ exec --no-startup-id "blueman-applet &"
 exec --no-startup-id "nm-applet &"
 exec --no-startup-id "1password &"
 exec --no-startup-id "playerctld &"
+exec --no-startup-id "udiskie &"
 
 exec_always --no-startup-id ~/.screenlayout/default.sh
 exec_always --no-startup-id /home/alex/.config/polybar/launch.sh
