@@ -1,0 +1,15 @@
+[user]
+	name = Alexander Schlögl
+	email = alexander.schloegl@uibk.ac.at
+[core]
+	editor = helix
+	excludesFile = /home/alex/Projects/dotfiles/git/gitignore
+[pull]
+	rebase = true
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[init]
+	defaultBranch = main
