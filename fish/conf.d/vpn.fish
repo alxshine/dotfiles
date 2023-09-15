@@ -7,7 +7,7 @@ function unislice
 end
 
 function autoslice
-        firefox https://fwauth-tech.uibk.ac.at
+        spawn firefox --new-window https://fwauth-tech.uibk.ac.at
         op item get LFU --fields label=password | sudo openconnect vpn.uibk.ac.at --passwd-on-stdin -u c7031199
 end
 
