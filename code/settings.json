@@ -80,4 +80,5 @@
     "C_Cpp.inlayHints.autoDeclarationTypes.showOnLeft": true,
     "C_Cpp.inactiveRegionOpacity": 0.9,
     "workbench.startupEditor": "none",
+    "codeQL.telemetry.enableTelemetry": false,
 }
