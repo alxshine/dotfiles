@@ -236,8 +236,10 @@ set $ws10 "10"
 
 assign [class="Element"] $ws1
 assign [class="Signal"] $ws1
-assign [class="discord"] $ws3
-assign [class="thunderbird"] $ws3
+assign [class="discord"] $ws1
+assign [class="thunderbird"] $ws1
+assign [class="slack"] $ws1
+for_window [title="neomutt"] move window to workspace $ws1
 assign [class="steam"] $ws6
 assign [class="Spotify"] $ws5
 
