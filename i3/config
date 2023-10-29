@@ -32,6 +32,7 @@ exec --no-startup-id "nm-applet &"
 exec --no-startup-id "1password &"
 exec --no-startup-id "playerctld &"
 exec --no-startup-id "udiskie &"
+exec_always --no-startup-id "/usr/lib/xdg-desktop-portal --replace --verbose"
 
 exec_always --no-startup-id ~/.screenlayout/default.sh
 exec_always --no-startup-id /home/alex/.config/polybar/launch.sh
@@ -49,8 +50,9 @@ exec_always ~/Pictures/wallpaper
 
 gaps horizontal 32
 gaps vertical 20
-gaps inner 20
-gaps outer 10
+gaps inner 17
+gaps outer 12
+smart_gaps inverse_outer
 # start a terminal
 bindsym $mod+Return exec kitty
 
@@ -87,8 +89,8 @@ bindsym Mod1+Shift+$mod+c exec playerctl volume 0.05+
 bindsym Mod1+Shift+$mod+r exec playerctl volume 0.05-
 
 # browser
-bindsym $mod+b exec --no-startup-id firefox
-bindsym $mod+Shift+b exec --no-startup-id firefox --private-window
+bindsym $mod+b exec --no-startup-id chromium
+bindsym $mod+Shift+b exec --no-startup-id chromium --incognito
 
 # resize
 bindsym $mod+r exec i3-nagbar -m "Resizing" -t warning; mode "resize"
