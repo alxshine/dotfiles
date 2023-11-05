@@ -48,10 +48,8 @@ exec_always ~/Pictures/wallpaper
 #
 ##########################################################
 
-gaps horizontal 32
-gaps vertical 20
 gaps inner 17
-gaps outer 12
+gaps outer 25
 smart_gaps inverse_outer
 # start a terminal
 bindsym $mod+Return exec kitty
