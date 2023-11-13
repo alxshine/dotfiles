@@ -12,13 +12,13 @@ enable = true
 [keys.normal]
 C-r = ":pipe-to kitty @ send-text --match recent:1 --stdin"
 C-A-l = ":format"
-C-A-s = ":sh echo -e %{filename}:%{linenumber} >> bookmarks.txt"
+C-A-s = ":sh echo -e %{filename}:%{linenumber} >> bookmarks.md"
 C-A-c = ":sh echo -e %{filename}:%{linenumber} | xsel -b"
 C-A-o = ":o %{selection}"
-C-A-b = ":o bookmarks.txt"
+C-A-b = ":o bookmarks.md"
 
 [keys.select]
 C-r = ":pipe-to kitty @ send-text --match recent:1 --stdin"
-C-A-s = ":sh echo -e %{filename}:%{linenumber} >> bookmarks.txt"
+C-A-s = ":sh echo -e %{filename}:%{linenumber} >> bookmarks.md"
 C-A-o = ":o %{selection}"
-C-A-b = ":o bookmarks.txt"
+C-A-b = ":o bookmarks.md"
