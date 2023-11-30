@@ -52,7 +52,6 @@ gaps inner 7
 gaps outer 0
 smart_gaps inverse_outer
 # start a terminal
-bindsym $mod+Return exec kitty
 
 
 ##########################################################
@@ -67,6 +66,7 @@ bindsym $mod+Shift+q kill
 bindsym $mod+d exec "rofi -show drun -matching prefix"
 bindsym $mod+Shift+d exec "rofi -show combi -modes combi -combi-modes 'window,drun,run'"
 
+bindsym $mod+Return exec kitty
 bindsym $mod+e exec "kitty ranger"
 bindsym $mod+shift+e exec thunar
 
@@ -92,6 +92,7 @@ bindsym $mod+Shift+b exec --no-startup-id chromium --incognito
 
 # resize
 bindsym $mod+r exec i3-nagbar -m "Resizing" -t warning; mode "resize"
+bindsym $mod+g exec i3-msg gaps inner current set 0
 
 # suspend
 # bindsym $mod+l exec "slock systemctl suspend -i"
