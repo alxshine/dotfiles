@@ -81,4 +81,12 @@
     "C_Cpp.inactiveRegionOpacity": 0.9,
     "workbench.startupEditor": "none",
     "codeQL.telemetry.enableTelemetry": false,
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "files.watcherExclude": {
+        "**/.bloop": true,
+        "**/.metals": true,
+        "**/.ammonite": true
+    },
 }
