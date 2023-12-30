@@ -12,7 +12,7 @@ set $down n
 set $right s
 set $mod Mod4
 
-include colors/gruvbox.conf
+include colors/ayu.conf
 
 ##########################################################
 #
@@ -25,14 +25,17 @@ exec --no-startup-id "/usr/bin/gnome-keyring-daemon --start --components=secret"
 exec --no-startup-id "/usr/lib/polkit-kde-authentication-agent-1"
 exec --no-startup-id "dbus-update-activation-environment --systemd DBUS_SESSION_BUS_ADDRESS DISPLAY XAUTHORITY"
 exec --no-startup-id "dropbox &"
-exec --no-startup-id "wired &" # notification daemon
-exec --no-startup-id "picom &"
+# exec --no-startup-id "wired &" # notification daemon
+# exec --no-startup-id "picom &"
 exec --no-startup-id "blueman-applet &"
 exec --no-startup-id "nm-applet &"
 exec --no-startup-id "1password &"
 exec --no-startup-id "playerctld &"
 exec --no-startup-id "udiskie &"
 exec_always --no-startup-id "/usr/lib/xdg-desktop-portal --replace --verbose"
+
+# exec --no-startup-id flatpak run org.signal.Signal --use-tray-icon --start-in-tray
+# exec --no-startup-id flatpak run --filesystem=home im.riot.Riot --hidden
 
 exec_always --no-startup-id ~/.screenlayout/default.sh
 # exec_always --no-startup-id /home/alex/.config/polybar/launch.sh
@@ -63,8 +66,8 @@ smart_gaps inverse_outer
 
 # kill focused window
 bindsym $mod+Shift+q kill
-bindsym $mod+d exec "rofi -show drun -matching prefix"
-bindsym $mod+Shift+d exec "rofi -show combi -modes combi -combi-modes 'window,drun,run'"
+# bindsym $mod+d exec "rofi -show drun -matching prefix"
+# bindsym $mod+Shift+d exec "rofi -show combi -modes combi -combi-modes 'window,drun,run'"
 
 bindsym $mod+Return exec kitty
 bindsym $mod+e exec "kitty ranger"
@@ -235,17 +238,18 @@ set $ws9 "9"
 set $ws10 "10"
 
 
-assign [class="Element"] $ws1
-assign [class="Signal"] $ws1
-assign [class="discord"] $ws1
-assign [class="thunderbird"] $ws1
-assign [class="slack"] $ws1
-for_window [title="^neomutt$"] move window to workspace $ws1
-assign [class="steam"] $ws6
-assign [class="Spotify"] $ws5
+# assign [class="Element"] $ws1
+# assign [class="Signal"] $ws1
+# assign [class="discord"] $ws1
+# assign [class="thunderbird"] $ws1
+# assign [class="slack"] $ws1
+# for_window [title="^neomutt$"] move window to workspace $ws1
+# assign [class="steam"] $ws6
+# assign [class="Spotify"] $ws5
 
 # float godot windows
 for_window [title=".*(DEBUG)"] floating enable
+for_window [title=".*(Application Finder)"] floating enable
 
 
 # resize window (you can also use the mouse for that)
