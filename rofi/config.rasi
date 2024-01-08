@@ -1,70 +1,89 @@
-/*******************************************************************************
- * BASED ON:
- * ROFI SQUARED THEME USING THE EVERFOREST PALETTE 
- * User                 : LR-Tech               
- * Theme Repo           : https://github.com/lr-tech/rofi-themes-collection
- *******************************************************************************/
+/*
+ * ROFI color theme
+ *
+ * Based on Something Found in the Internet
+ *
+ * User: Contributors
+ * Copyright: *!
+ */
+
+configuration {
+  font: "Mononoki Nerd Font Mono Regular 10";
+
+  drun {
+    display-name: "";
+  }
+
+  run {
+    display-name: ">";
+  }
+
+  window {
+    display-name: "w";
+  }
+
+  timeout {
+    delay: 10;
+    action: "kb-cancel";
+  }
+}
 
 * {
-    font:   "Source Code Pro 12";
+  border: 0;
+  margin: 0;
+  padding: 0;
+  spacing: 0;
 
-    normal-background:     #0E1419; //kitty background
-    lightbg:     #243340; //kitty selection_background
-    foreground:     #E5E1CF;
+  bg: #1a1b26;
+  bg-alt: #232433;
+  fg: #6a6f87;
+  fg-alt: #a9b1d6;
 
-    accent-color:     #F19618; // kitty cursor
-    urgent-color:     #FF3333;
+  background-color: @bg;
+  text-color: @fg;
 
-    background-color:   transparent;
-    text-color:         @foreground;
-
-    margin:     2;
-    padding:    4;
-    spacing:    9;
+  urgent-color: red;
+  accent-color: #36a3d9;
 }
 
 window {
-    location:   center;
-    width:      780;
+  transparency: "real";
+  width: 700px;
+}
 
-    background-color:   @normal-background;
+mainbox {
+  children: [inputbar, listview];
 }
 
 inputbar {
-    spacing:    8px; 
-    padding:    8px;
-
-    background-color:   @lightbg;
+  background-color: @bg-alt;
+  text-color: @fg-alt;
+  children: [prompt, entry];
 }
 
-prompt, entry, element-icon, element-text {
-    vertical-align: 0.5;
+entry {
+  background-color: inherit;
+  text-color: @fg-alt;
+  padding: 12px 3px;
 }
 
 prompt {
-    text-color: @accent-color;
-}
-
-textbox {
-    padding:            8px;
-    background-color:   @lightbg;
+  background-color: inherit;
+  padding: 12px;
 }
 
 listview {
-    padding:    4px 0;
-    lines:      8;
-    columns:    1;
-
-    fixed-height:   false;
+  lines: 8;
 }
 
-element {
-    padding:    8px;
-    spacing:    8px;
+element normal.normal {
+    text-color: @fg;
+    background-color: @bg;
 }
 
-element normal normal {
-    text-color: @foreground;
+element alternate.normal {
+    text-color: @fg-alt;
+    background-color: @bg-alt;
 }
 
 element normal urgent {
@@ -80,17 +99,27 @@ element selected {
 }
 
 element selected normal, element selected active {
-    background-color:   @accent-color;
+    text-color:   @accent-color;
 }
 
 element selected urgent {
     background-color:   @urgent-color;
 }
 
+element {
+  background-color: inherit;
+  children: [element-icon, element-text];
+}
+
 element-icon {
-    size:   0.8em;
+  padding: 10px 10px;
+  size: 20px;
 }
 
 element-text {
-    text-color: inherit;
+  padding: 10px 0;
+}
+
+element-text selected {
+  text-color: @fg-alt;
 }
