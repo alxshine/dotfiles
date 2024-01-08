@@ -51,3 +51,6 @@ export FZF_DEFAULT_COMMAND='fd'
 # add .local to path
 export PATH="$PATH:$HOME/.local/bin"
 export XDG_CONFIG_HOME="$HOME/.config"
+
+fish
+exit 0
