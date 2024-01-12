@@ -1,11 +1,11 @@
 #!/bin/fish
 
-if test (playerctl status) = "Paused"
-    set XPAN "<img>/home/alex/.config/genmon/icons/pause.png</img>"
-    set text "Paused"
-else
+if test (playerctl status) = "Playing"
     set XPAN "<img>/home/alex/.config/genmon/icons/play.png</img>"
     set text "<span>$(playerctl metadata xesam:artist) - $(playerctl metadata xesam:title)<span>"
+else
+    set XPAN "<img>/home/alex/.config/genmon/icons/pause.png</img>"
+    set text "Not Playing"
 end
 
 # set -a XPAN "Not implemented error  ¯\_(ツ)_/¯"
