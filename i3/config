@@ -29,9 +29,9 @@ exec --no-startup-id "dropbox &"
 # exec --no-startup-id "picom &"
 exec --no-startup-id "blueman-applet &"
 exec --no-startup-id "nm-applet &"
-exec --no-startup-id "1password &"
+exec --no-startup-id "1password --silent &"
 exec --no-startup-id "playerctld &"
-exec --no-startup-id "udiskie &"
+exec --no-startup-id "udiskie -s &"
 exec_always --no-startup-id "/usr/lib/xdg-desktop-portal --replace --verbose"
 
 # exec --no-startup-id flatpak run org.signal.Signal --use-tray-icon --start-in-tray
